@@ -15,8 +15,8 @@ Advanced spatial analysis and data science for urban planning and public policy.
 - **Final Project:** Capstone modeling challenge
 
 ## About Me
-[Students will customize this section]
+Hi, everyone! My name is Jinheng, and I am second year student in city planning program, smart cities concentration. I have strong interest in urban data science. I took GIS class and introduction to smart cities class last year, and I would like to explore more in this class. 
 
 ## Contact
-- Email: [your.email@upenn.edu]
-- GitHub: [@your-username]
+- Email: jinhengc@upenn.edu
+- GitHub: @CenJinHeng
