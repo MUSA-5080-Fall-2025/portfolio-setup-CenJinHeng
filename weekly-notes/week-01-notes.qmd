@@ -5,19 +5,27 @@ date: "2025-09-08"
 
 ## Key Concepts Learned
 - [List main concepts from lecture]
+- Github key concepts: repo, commit, push, and pull
 - [Technical skills covered]
+- Github
+- basic R: install a new package
+- markdowm
 
 ## Coding Techniques
-- [New R functions or approaches]
-- [Quarto features learned]
+- [New R functions or approaches] 
+- dplyr: select(), filter(), mutate(), summarize(), group_by()
+- %>% is to connect the lines, pipeline
+- [Quarto features learned] Quarto is the next generation of markdown
 
 ## Questions & Challenges
-- [What I didn't fully understand]
-- [Areas needing more practice]
+- [What I didn't fully understand] difference between table and data frame? They are exactly the same thing but in two means
+- [Areas needing more practice] R studio, github repo
 
 ## Connections to Policy
-- [How this week's content applies to real policy work]
+- [How this week's content applies to real policy work] 
+- process a large_scale data set to provide some insights for policy decision_maker! 
+- build a website to communicate with public, improving political trust and transparency
 
 ## Reflection
-- [What was most interesting]
-- [How I'll apply this knowledge]
+- [What was most interesting] make my website page
+- [How I'll apply this knowledge] help me to process data in my planning studio, and use Github page to show my works and communicate with people!
