@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Jinheng Cen - MUSA 5080 Portfolio"
- navbar:
+  navbar:
     left:
       - href: index.qmd
         text: Home
