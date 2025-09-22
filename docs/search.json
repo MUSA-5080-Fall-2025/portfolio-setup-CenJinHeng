@@ -84,6 +84,55 @@
     "text": "Before submitting, make sure you’ve: - [ ] Customized _quarto.yml with your name - [ ] Updated index.qmd with your information - [ ] Completed Week 1 notes - [ ] Enabled GitHub Pages - [ ] Verified your website loads correctly - [ ] Submitted your URL to Canvas\n\nNeed help? Don’t struggle alone - reach out during office hours (mine + TAs) or in class!"
   },
   {
+    "objectID": "weekly-notes/week-02-notes.html",
+    "href": "weekly-notes/week-02-notes.html",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "",
+    "text": "set of rules to solve problems\nissues of data-driven policy-making: what is true for a group of people is not always true for individuals"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#algorithm",
+    "href": "weekly-notes/week-02-notes.html#algorithm",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "",
+    "text": "set of rules to solve problems\nissues of data-driven policy-making: what is true for a group of people is not always true for individuals"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#difference-between-data-science-and-data-analysis",
+    "href": "weekly-notes/week-02-notes.html#difference-between-data-science-and-data-analysis",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Difference between data science and data analysis",
+    "text": "Difference between data science and data analysis\n\ndata science: focus on algorithms/methods development\ndata analytics: application"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#machine-learning-and-ai",
+    "href": "weekly-notes/week-02-notes.html#machine-learning-and-ai",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Machine learning and AI",
+    "text": "Machine learning and AI\n\nMachine learning: classification&prediction learn from data\nAI: adjust and improve across iterations"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#accidental-data",
+    "href": "weekly-notes/week-02-notes.html#accidental-data",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Accidental data",
+    "text": "Accidental data\n\nget data from open-source sources like social media platforms, instagram"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#data-analytics-is-subjective",
+    "href": "weekly-notes/week-02-notes.html#data-analytics-is-subjective",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Data analytics is subjective",
+    "text": "Data analytics is subjective\n\ndata cleaning\ndata coding\ndata collection\ninterpret results\nwhat variables to put in the model"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#decennial-census-american-community-survey-acs",
+    "href": "weekly-notes/week-02-notes.html#decennial-census-american-community-survey-acs",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Decennial Census & American Community Survey (ACS)",
+    "text": "Decennial Census & American Community Survey (ACS)\n\nDecennial Census\n\nfor everyone, full sample\n9 basic questions\nconstitutional requirement\n\nAmerican Community Survey\n\n3% surveyed annually\ndetailed questions\n5-yr estimates are more reliable"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "MUSA 5080 Portfolio",
@@ -194,6 +243,41 @@
     "title": "Lab 0: Getting Started with dplyr",
     "section": "5.2 Categorical Summaries",
     "text": "5.2 Categorical Summaries\n\n# Frequency table for price categories\nFrequency_price_categories &lt;- car_data %&gt;%\n  group_by(price_category) %&gt;%\n  summarize(num_car = n())\n\nFrequency_price_categories\n\n# A tibble: 4 × 2\n  price_category num_car\n  &lt;chr&gt;            &lt;int&gt;\n1 budget           34040\n2 mid-range         6178\n3 midrange          9779\n4 &lt;NA&gt;                 3"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html",
+    "href": "weekly-notes/week-03-notes.html",
+    "title": "Week 3 Notes - Course Introduction",
+    "section": "",
+    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error\n\n\n\nggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency\n\n\n\n\ndistribution\n\n\n\n\n\nleft join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#why-visualization-matters",
+    "href": "weekly-notes/week-03-notes.html#why-visualization-matters",
+    "title": "Week 3 Notes - Course Introduction",
+    "section": "",
+    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#grammar-of-graphics",
+    "href": "weekly-notes/week-03-notes.html#grammar-of-graphics",
+    "title": "Week 3 Notes - Course Introduction",
+    "section": "",
+    "text": "ggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#exploratory-data-analysis",
+    "href": "weekly-notes/week-03-notes.html#exploratory-data-analysis",
+    "title": "Week 3 Notes - Course Introduction",
+    "section": "",
+    "text": "distribution"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#join",
+    "href": "weekly-notes/week-03-notes.html#join",
+    "title": "Week 3 Notes - Course Introduction",
+    "section": "",
+    "text": "left join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html",

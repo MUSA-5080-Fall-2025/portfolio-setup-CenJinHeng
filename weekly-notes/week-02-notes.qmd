@@ -1,0 +1,42 @@
+---
+title: "Week 2 Notes - Course Introduction"
+date: "2025-09-15"
+---
+
+## Algorithm
+- set of rules to solve problems
+- issues of data-driven policy-making: what is true for a group of people is not always true for individuals
+
+## Difference between data science and data analysis
+- data science: focus on algorithms/methods development
+- data analytics: application
+
+## Machine learning and AI
+- Machine learning: classification&prediction learn from data
+- AI: adjust and improve across iterations
+
+## Accidental data
+- get data from open-source sources like social media platforms, instagram
+
+## Data analytics is subjective
+- data cleaning
+- data coding
+- data collection
+- interpret results
+- what variables to put in the model
+
+## Decennial Census & American Community Survey (ACS)
+- Decennial Census
+  - for everyone, full sample
+  - 9 basic questions
+  - constitutional requirement
+- American Community Survey
+  - 3% surveyed annually
+  - detailed questions
+  - 5-yr estimates are more reliable
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+---
+title: "Week 3 Notes - Course Introduction"
+date: "2025-09-22"
+---
+
+# Data visualization & exploratory
+
+## why visualization matters
+
+bias in visualization
+summary can hide some important details
+example: Anscombe’s Quartet
+
+-	can not get ACS for census block, only decenial 
+-	census block groups have big margin of error (ACS), T island problem
+-	census tracts are better
+
+the smaller of the sample, the bigger margin of error 
+
+## Grammar of Graphics
+ggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )
+
+aes:
+-	X,y
+-	color
+-	fill
+-	size
+-	shape
+-	alpha _ transparency
+
+## exploratory data analysis
+-	distribution
+
+## join
+-	left join is preserve the table at first (often option)
+-	right join …. The second table
+-	full join is to preserve all the tables (necessary sometimes)
+-	inner joint is to find the result held by both tables
