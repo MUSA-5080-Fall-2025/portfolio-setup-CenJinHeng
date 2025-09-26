@@ -84,88 +84,186 @@
     "text": "Before submitting, make sure you’ve: - [ ] Customized _quarto.yml with your name - [ ] Updated index.qmd with your information - [ ] Completed Week 1 notes - [ ] Enabled GitHub Pages - [ ] Verified your website loads correctly - [ ] Submitted your URL to Canvas\n\nNeed help? Don’t struggle alone - reach out during office hours (mine + TAs) or in class!"
   },
   {
-    "objectID": "weekly-notes/week-02-notes.html",
-    "href": "weekly-notes/week-02-notes.html",
-    "title": "Week 2 Notes - Course Introduction",
+    "objectID": "weekly-notes/week-04-notes.html",
+    "href": "weekly-notes/week-04-notes.html",
+    "title": "Week 3 Notes - Course Introduction",
     "section": "",
-    "text": "set of rules to solve problems\nissues of data-driven policy-making: what is true for a group of people is not always true for individuals"
+    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error\n\n\n\nggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency\n\n\n\n\ndistribution\n\n\n\n\n\nleft join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
   },
   {
-    "objectID": "weekly-notes/week-02-notes.html#algorithm",
-    "href": "weekly-notes/week-02-notes.html#algorithm",
-    "title": "Week 2 Notes - Course Introduction",
+    "objectID": "weekly-notes/week-04-notes.html#why-visualization-matters",
+    "href": "weekly-notes/week-04-notes.html#why-visualization-matters",
+    "title": "Week 3 Notes - Course Introduction",
     "section": "",
-    "text": "set of rules to solve problems\nissues of data-driven policy-making: what is true for a group of people is not always true for individuals"
+    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error"
   },
   {
-    "objectID": "weekly-notes/week-02-notes.html#difference-between-data-science-and-data-analysis",
-    "href": "weekly-notes/week-02-notes.html#difference-between-data-science-and-data-analysis",
-    "title": "Week 2 Notes - Course Introduction",
-    "section": "Difference between data science and data analysis",
-    "text": "Difference between data science and data analysis\n\ndata science: focus on algorithms/methods development\ndata analytics: application"
-  },
-  {
-    "objectID": "weekly-notes/week-02-notes.html#machine-learning-and-ai",
-    "href": "weekly-notes/week-02-notes.html#machine-learning-and-ai",
-    "title": "Week 2 Notes - Course Introduction",
-    "section": "Machine learning and AI",
-    "text": "Machine learning and AI\n\nMachine learning: classification&prediction learn from data\nAI: adjust and improve across iterations"
-  },
-  {
-    "objectID": "weekly-notes/week-02-notes.html#accidental-data",
-    "href": "weekly-notes/week-02-notes.html#accidental-data",
-    "title": "Week 2 Notes - Course Introduction",
-    "section": "Accidental data",
-    "text": "Accidental data\n\nget data from open-source sources like social media platforms, instagram"
-  },
-  {
-    "objectID": "weekly-notes/week-02-notes.html#data-analytics-is-subjective",
-    "href": "weekly-notes/week-02-notes.html#data-analytics-is-subjective",
-    "title": "Week 2 Notes - Course Introduction",
-    "section": "Data analytics is subjective",
-    "text": "Data analytics is subjective\n\ndata cleaning\ndata coding\ndata collection\ninterpret results\nwhat variables to put in the model"
-  },
-  {
-    "objectID": "weekly-notes/week-02-notes.html#decennial-census-american-community-survey-acs",
-    "href": "weekly-notes/week-02-notes.html#decennial-census-american-community-survey-acs",
-    "title": "Week 2 Notes - Course Introduction",
-    "section": "Decennial Census & American Community Survey (ACS)",
-    "text": "Decennial Census & American Community Survey (ACS)\n\nDecennial Census\n\nfor everyone, full sample\n9 basic questions\nconstitutional requirement\n\nAmerican Community Survey\n\n3% surveyed annually\ndetailed questions\n5-yr estimates are more reliable"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MUSA 5080 Portfolio",
+    "objectID": "weekly-notes/week-04-notes.html#grammar-of-graphics",
+    "href": "weekly-notes/week-04-notes.html#grammar-of-graphics",
+    "title": "Week 3 Notes - Course Introduction",
     "section": "",
-    "text": "This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nHi, everyone! My name is Jinheng, and I am second year student in city planning program, smart cities concentration. I have strong interest in urban data science. I took GIS class and introduction to smart cities class last year, and I would like to explore more in this class.\n\n\n\n\nEmail: jinhengc@upenn.edu\nGitHub: @CenJinHeng"
+    "text": "ggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency"
   },
   {
-    "objectID": "index.html#about-this-course",
-    "href": "index.html#about-this-course",
-    "title": "MUSA 5080 Portfolio",
+    "objectID": "weekly-notes/week-04-notes.html#exploratory-data-analysis",
+    "href": "weekly-notes/week-04-notes.html#exploratory-data-analysis",
+    "title": "Week 3 Notes - Course Introduction",
     "section": "",
-    "text": "Advanced spatial analysis and data science for urban planning and public policy."
+    "text": "distribution"
   },
   {
-    "objectID": "index.html#portfolio-structure",
-    "href": "index.html#portfolio-structure",
-    "title": "MUSA 5080 Portfolio",
+    "objectID": "weekly-notes/week-04-notes.html#join",
+    "href": "weekly-notes/week-04-notes.html#join",
+    "title": "Week 3 Notes - Course Introduction",
     "section": "",
-    "text": "Weekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge"
+    "text": "left join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
   },
   {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "MUSA 5080 Portfolio",
+    "objectID": "weekly-notes/week-03-notes.html",
+    "href": "weekly-notes/week-03-notes.html",
+    "title": "Week 3 Notes - Course Introduction",
     "section": "",
-    "text": "Hi, everyone! My name is Jinheng, and I am second year student in city planning program, smart cities concentration. I have strong interest in urban data science. I took GIS class and introduction to smart cities class last year, and I would like to explore more in this class."
+    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error\n\n\n\nggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency\n\n\n\n\ndistribution\n\n\n\n\n\nleft join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
   },
   {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "MUSA 5080 Portfolio",
+    "objectID": "weekly-notes/week-03-notes.html#why-visualization-matters",
+    "href": "weekly-notes/week-03-notes.html#why-visualization-matters",
+    "title": "Week 3 Notes - Course Introduction",
     "section": "",
-    "text": "Email: jinhengc@upenn.edu\nGitHub: @CenJinHeng"
+    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#grammar-of-graphics",
+    "href": "weekly-notes/week-03-notes.html#grammar-of-graphics",
+    "title": "Week 3 Notes - Course Introduction",
+    "section": "",
+    "text": "ggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#exploratory-data-analysis",
+    "href": "weekly-notes/week-03-notes.html#exploratory-data-analysis",
+    "title": "Week 3 Notes - Course Introduction",
+    "section": "",
+    "text": "distribution"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#join",
+    "href": "weekly-notes/week-03-notes.html#join",
+    "title": "Week 3 Notes - Course Introduction",
+    "section": "",
+    "text": "left join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html",
+    "href": "assignment/assignment_1/assignment_1.html",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "",
+    "text": "You are a data analyst for the New Jersey Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues.\n\n\n\n\nApply dplyr functions to real census data for policy analysis\nEvaluate data quality using margins of error\nConnect technical analysis to algorithmic decision-making\nIdentify potential equity implications of data reliability issues\nCreate professional documentation for policy stakeholders\n\n\n\n\nSubmit by posting your updated portfolio link on Canvas. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/\nMake sure to update your _quarto.yml navigation to include this assignment under an “Assignments” menu."
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#scenario",
+    "href": "assignment/assignment_1/assignment_1.html#scenario",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "",
+    "text": "You are a data analyst for the New Jersey Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues."
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#learning-objectives",
+    "href": "assignment/assignment_1/assignment_1.html#learning-objectives",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "",
+    "text": "Apply dplyr functions to real census data for policy analysis\nEvaluate data quality using margins of error\nConnect technical analysis to algorithmic decision-making\nIdentify potential equity implications of data reliability issues\nCreate professional documentation for policy stakeholders"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#submission-instructions",
+    "href": "assignment/assignment_1/assignment_1.html#submission-instructions",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "",
+    "text": "Submit by posting your updated portfolio link on Canvas. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/\nMake sure to update your _quarto.yml navigation to include this assignment under an “Assignments” menu."
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#data-retrieval",
+    "href": "assignment/assignment_1/assignment_1.html#data-retrieval",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "2.1 Data Retrieval",
+    "text": "2.1 Data Retrieval\nYour Task: Use get_acs() to retrieve county-level data for your chosen state.\nRequirements: - Geography: county level - Variables: median household income (B19013_001) and total population (B01003_001)\n- Year: 2022 - Survey: acs5 - Output format: wide\nHint: Remember to give your variables descriptive names using the variables = c(name = \"code\") syntax.\n\n# Write your get_acs() code here\ncounty_data &lt;- get_acs(\n  geography = \"county\",\n  variables = c(\n    median_income = \"B19013_001\",   # Median household income\n    total_population = \"B01003_001\"       # Total pop\n  ),\n  state = my_state,\n  year = 2022,\n  survey = \"acs5\",\n  output = \"wide\"\n)\n\n# Clean the county names to remove state name and \"County\" \n# Hint: use mutate() with str_remove()\ncounty_data &lt;- county_data %&gt;%\n  mutate(county_name = NAME %&gt;% \n           str_remove(\" County, New Jersey\")\n         )\n\n# Display the first few rows\nhead(county_data,10)\n\n# A tibble: 10 × 7\n   GEOID NAME  median_incomeE median_incomeM total_populationE total_populationM\n   &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;             &lt;dbl&gt;             &lt;dbl&gt;\n 1 34001 Atla…          73113           1917            274339                NA\n 2 34003 Berg…         118714           1607            953243                NA\n 3 34005 Burl…         102615           1436            461853                NA\n 4 34007 Camd…          82005           1414            522581                NA\n 5 34009 Cape…          83870           3707             95456                NA\n 6 34011 Cumb…          62310           2205            153588                NA\n 7 34013 Esse…          73785           1477            853374                NA\n 8 34015 Glou…          99668           2605            302621                NA\n 9 34017 Huds…          86854           1782            712029                NA\n10 34019 Hunt…         133534           3236            129099                NA\n# ℹ 1 more variable: county_name &lt;chr&gt;"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#data-quality-assessment",
+    "href": "assignment/assignment_1/assignment_1.html#data-quality-assessment",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "2.2 Data Quality Assessment",
+    "text": "2.2 Data Quality Assessment\nYour Task: Calculate margin of error percentages and create reliability categories.\nRequirements: - Calculate MOE percentage: (margin of error / estimate) * 100 - Create reliability categories: - High Confidence: MOE &lt; 5% - Moderate Confidence: MOE 5-10%\n- Low Confidence: MOE &gt; 10% - Create a flag for unreliable estimates (MOE &gt; 10%)\nHint: Use mutate() with case_when() for the categories.\n\n# Calculate MOE percentage and reliability categories using mutate()\ncounty_data &lt;- county_data %&gt;%\n  mutate(median_incomeMOE = (median_incomeM / median_incomeE) * 100,\n        rel_categories = case_when(\n            median_incomeMOE &lt; 5 ~ \"High Confidence\",\n            median_incomeMOE &gt;= 5 & median_incomeMOE &lt; 10 ~ \"Moderate Confidence\",\n            median_incomeMOE &gt;= 10 ~ \"Low Confidence\"\n        )\n  )\n\n# Create a summary showing count of counties in each reliability category\n# Hint: use count() and mutate() to add percentages\nsummary_data &lt;- county_data %&gt;%\n  count(rel_categories) %&gt;%\n  mutate(percentage = n/sum(n))"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#high-uncertainty-counties",
+    "href": "assignment/assignment_1/assignment_1.html#high-uncertainty-counties",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "2.3 High Uncertainty Counties",
+    "text": "2.3 High Uncertainty Counties\nYour Task: Identify the 5 counties with the highest MOE percentages.\nRequirements: - Sort by MOE percentage (highest first) - Select the top 5 counties - Display: county name, median income, margin of error, MOE percentage, reliability category - Format as a professional table using kable()\nHint: Use arrange(), slice(), and select() functions.\n\n# Create table of top 5 counties by MOE percentage\n#?arrange\n#?select\n#glimpse(county_data)\n\ntop_5 &lt;- county_data %&gt;%\n  arrange(desc(median_incomeMOE)) %&gt;%\n  slice_head( n = 5 ) %&gt;%\n  select(county_name, median_incomeE, median_incomeM, median_incomeMOE, rel_categories)\n\ntop_5\n\n# A tibble: 5 × 5\n  county_name median_incomeE median_incomeM median_incomeMOE rel_categories \n  &lt;chr&gt;                &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;          \n1 Cape May             83870           3707             4.42 High Confidence\n2 Salem                73378           3047             4.15 High Confidence\n3 Cumberland           62310           2205             3.54 High Confidence\n4 Atlantic             73113           1917             2.62 High Confidence\n5 Gloucester           99668           2605             2.61 High Confidence\n\n# Format as table with kable() - include appropriate column names and caption\n#?kable\nkable(top_5,digits = getOption(\"digits\"), caption = \"Top 5 counties in NJ with the highest median income MOE\")\n\n\nTop 5 counties in NJ with the highest median income MOE\n\n\n\n\n\n\n\n\n\ncounty_name\nmedian_incomeE\nmedian_incomeM\nmedian_incomeMOE\nrel_categories\n\n\n\n\nCape May\n83870\n3707\n4.419936\nHigh Confidence\n\n\nSalem\n73378\n3047\n4.152471\nHigh Confidence\n\n\nCumberland\n62310\n2205\n3.538758\nHigh Confidence\n\n\nAtlantic\n73113\n1917\n2.621969\nHigh Confidence\n\n\nGloucester\n99668\n2605\n2.613677\nHigh Confidence\n\n\n\n\n\nData Quality Commentary:\n[Write 2-3 sentences explaining what these results mean for algorithmic decision-making. Consider: Which counties might be poorly served by algorithms that rely on this income data? What factors might contribute to higher uncertainty?]\nCounties with high MOE are not suitable for consideration using algorithmic decision-making, as the margin errors are substantial, which means some important details could be lost in the calculation process. The result of the algorithm could be unreliable and can not convince people. For this income data in New Jersey, Cape May is not a good choice. Factors contributing to the high uncertainty could include income variance across different groups, sample sizes, and data collecting methods."
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#focus-area-selection",
+    "href": "assignment/assignment_1/assignment_1.html#focus-area-selection",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "3.1 Focus Area Selection",
+    "text": "3.1 Focus Area Selection\nYour Task: Select 2-3 counties from your reliability analysis for detailed tract-level study.\nStrategy: Choose counties that represent different reliability levels (e.g., 1 high confidence, 1 moderate, 1 low confidence) to compare how data quality varies.\n\n# Use filter() to select 2-3 counties from your county_reliability data\n# Store the selected counties in a variable called selected_counties\n\n# NOTE: Since all the NJ counties are High Confidence, I chose the highest and lowest ones, combined with a moderate one\nselected_counties &lt;- county_data %&gt;%\n  filter(county_name == \"Cape May\"|county_name == \"Bergen\"|county_name == \"Union\")\n\nselected_counties\n\n# A tibble: 3 × 9\n  GEOID NAME   median_incomeE median_incomeM total_populationE total_populationM\n  &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;             &lt;dbl&gt;             &lt;dbl&gt;\n1 34003 Berge…         118714           1607            953243                NA\n2 34009 Cape …          83870           3707             95456                NA\n3 34039 Union…          95000           2210            572079                NA\n# ℹ 3 more variables: county_name &lt;chr&gt;, median_incomeMOE &lt;dbl&gt;,\n#   rel_categories &lt;chr&gt;\n\n# Display the selected counties with their key characteristics\n# Show: county name, median income, MOE percentage, reliability category\n\nselected_counties &lt;- selected_counties %&gt;%\n  select(county_name, median_incomeE, median_incomeMOE, rel_categories)\nkable(selected_counties,digits = getOption(\"digits\"), caption = \"Selected Counties\")\n\n\nSelected Counties\n\n\ncounty_name\nmedian_incomeE\nmedian_incomeMOE\nrel_categories\n\n\n\n\nBergen\n118714\n1.353673\nHigh Confidence\n\n\nCape May\n83870\n4.419936\nHigh Confidence\n\n\nUnion\n95000\n2.326316\nHigh Confidence\n\n\n\n\n\nComment on the output: It appears that the median income level and the MOE are somewhat correlated, the higher the median income, the lower the MOE."
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#tract-level-demographics",
+    "href": "assignment/assignment_1/assignment_1.html#tract-level-demographics",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "3.2 Tract-Level Demographics",
+    "text": "3.2 Tract-Level Demographics\nYour Task: Get demographic data for census tracts in your selected counties.\nRequirements: - Geography: tract level - Variables: white alone (B03002_003), Black/African American (B03002_004), Hispanic/Latino (B03002_012), total population (B03002_001) - Use the same state and year as before - Output format: wide - Challenge: You’ll need county codes, not names. Look at the GEOID patterns in your county data for hints.\n\n# Define your race/ethnicity variables with descriptive names\nvars = c(\n    white = \"B03002_003\",   \n    Black = \"B03002_004\",\n    Hispanic = \"B03002_012\",\n    total_population = \"B03002_001\"\n  )\n\n# Use get_acs() to retrieve tract-level data\n# Hint: You may need to specify county codes in the county parameter\ntract_data &lt;- get_acs(\n  geography = \"tract\",\n  variables = vars,\n  state = my_state,\n  county = c(\"003\", \"009\", \"039\"),\n  year = 2022,\n  survey = \"acs5\",\n  output = \"wide\"\n)\n\n# Calculate percentage of each group using mutate()\n# Create percentages for white, Black, and Hispanic populations\ntract_data &lt;- tract_data %&gt;%\n  mutate(\n    white_percentage = (whiteE / total_populationE)*100,\n    black_percentage = (BlackE / total_populationE)*100,\n    his_percentage = (HispanicE / total_populationE)*100\n  )\n\n# Add readable tract and county name columns using str_extract() or similar\n#?str_extract()\ntract_data &lt;- tract_data %&gt;%\n  mutate(\n    tract_name  = str_trim(str_split_fixed(NAME, \";\", 3)[,1]),\n    county_name = str_trim(str_remove(str_split_fixed(NAME, \";\", 3)[,2], \" County\"))\n  )"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#demographic-analysis",
+    "href": "assignment/assignment_1/assignment_1.html#demographic-analysis",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "3.3 Demographic Analysis",
+    "text": "3.3 Demographic Analysis\nYour Task: Analyze the demographic patterns in your selected areas.\n\n# Find the tract with the highest percentage of Hispanic/Latino residents\n# Hint: use arrange() and slice() to get the top tract\ntop_his_tract &lt;- tract_data %&gt;%\n  arrange(desc(his_percentage)) %&gt;%\n  slice_head(n = 1)\n\ntop_his_tract\n\n# A tibble: 1 × 15\n  GEOID  NAME  whiteE whiteM BlackE BlackM HispanicE HispanicM total_populationE\n  &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt;\n1 34039… Cens…    218    120    310    219      2935       624              3483\n# ℹ 6 more variables: total_populationM &lt;dbl&gt;, white_percentage &lt;dbl&gt;,\n#   black_percentage &lt;dbl&gt;, his_percentage &lt;dbl&gt;, tract_name &lt;chr&gt;,\n#   county_name &lt;chr&gt;\n\n# Calculate average demographics by county using group_by() and summarize()\n# Show: number of tracts, average percentage for each racial/ethnic group\nsummary_data_2 &lt;- tract_data %&gt;%\n  group_by(county_name) %&gt;%\n  summarize(\n    num_tract = n(),\n    avg_white_p = mean(white_percentage, na.rm = TRUE),\n    avg_black_p = mean(black_percentage, na.rm = TRUE),\n    avg_his_p = mean(his_percentage, na.rm = TRUE)\n  )\n\n# Create a nicely formatted table of your results using kable()\nkable(summary_data_2,digits = getOption(\"digits\"), caption = \"Average percentage of races\")\n\n\nAverage percentage of races\n\n\ncounty_name\nnum_tract\navg_white_p\navg_black_p\navg_his_p\n\n\n\n\nBergen\n203\n53.08512\n5.390523\n21.595950\n\n\nCape May\n33\n86.01229\n2.830430\n7.664504\n\n\nUnion\n120\n35.83627\n20.277607\n34.532339"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#moe-analysis-for-demographic-variables",
+    "href": "assignment/assignment_1/assignment_1.html#moe-analysis-for-demographic-variables",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "4.1 MOE Analysis for Demographic Variables",
+    "text": "4.1 MOE Analysis for Demographic Variables\nYour Task: Examine margins of error for demographic variables to see if some communities have less reliable data.\nRequirements: - Calculate MOE percentages for each demographic variable - Flag tracts where any demographic variable has MOE &gt; 15% - Create summary statistics\n\n# Calculate MOE percentages for white, Black, and Hispanic variables\n# Hint: use the same formula as before (margin/estimate * 100)\n\ntract_data &lt;- tract_data %&gt;%\n  mutate(\n    white_MOE = (whiteM / whiteE)*100,\n    black_MOE = (BlackM / BlackE)*100,\n    his_MOE = (HispanicM / HispanicE)*100,\n  )\n\n# Create a flag for tracts with high MOE on any demographic variable\n# Use logical operators (| for OR) in an ifelse() statement\n\ntract_data &lt;- tract_data %&gt;%\n  mutate(\n    flag = if_else(\n      white_MOE &gt; 15 | black_MOE &gt; 15 | his_MOE &gt; 15,\n      \"Flag\",\n      \"Moderate\"\n    )\n  )\n\n# Create summary statistics showing how many tracts have data quality issues\nnum_flag &lt;- tract_data %&gt;%\n  filter(flag == \"Flag\") %&gt;%\n  summarise(\n    num = n()\n  ) #356"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#pattern-analysis",
+    "href": "assignment/assignment_1/assignment_1.html#pattern-analysis",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "4.2 Pattern Analysis",
+    "text": "4.2 Pattern Analysis\nYour Task: Investigate whether data quality problems are randomly distributed or concentrated in certain types of communities.\n\n# Group tracts by whether they have high MOE issues\n# Calculate average characteristics for each group:\n# - population size, demographic percentages\n\n# Use group_by() and summarize() to create this comparison\n# Create a professional table showing the patterns\n\n#NOTE: I chose white alone and calculated the white_flag, cuz all tracts are flagged in the previous step \n\ntract_data &lt;- tract_data %&gt;%\n  mutate(\n    flag_white = if_else(\n      white_MOE &gt; 15,\n      \"Flag\",\n      \"Moderate\"\n    )\n  )\n\nsummary_data_3 &lt;- tract_data %&gt;%\n  group_by(flag_white) %&gt;%\n  summarise(\n    num = n(),\n    avg_pop = mean(total_populationE, na.rm = TRUE),\n    avg_white_p = mean(white_percentage, na.rm = TRUE),\n  )\n\nkable(summary_data_3,digits = getOption(\"digits\"), caption = \"summary of flagged and unflaged group\")\n\n\nsummary of flagged and unflaged group\n\n\nflag_white\nnum\navg_pop\navg_white_p\n\n\n\n\nFlag\n256\n4440.484\n40.63099\n\n\nModerate\n100\n4840.140\n74.68121\n\n\n\n\n\nPattern Analysis: [Describe any patterns you observe. Do certain types of communities have less reliable data? What might explain this?] It seems like that a community with large population and high concentration of certain kind of people are likely to be not flagged. This can be explained by the sample size that MOE would be smaller if the sample size goes larger."
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#analysis-integration-and-professional-summary",
+    "href": "assignment/assignment_1/assignment_1.html#analysis-integration-and-professional-summary",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "5.1 Analysis Integration and Professional Summary",
+    "text": "5.1 Analysis Integration and Professional Summary\nYour Task: Write an executive summary that integrates findings from all four analyses.\nExecutive Summary Requirements: 1. Overall Pattern Identification: What are the systematic patterns across all your analyses?\n\nEquity Assessment: Which communities face the greatest risk of algorithmic bias based on your findings?\nRoot Cause Analysis: What underlying factors drive both data quality issues and bias risk?\nStrategic Recommendations: What should the Department implement to address these systematic issues?\n\nExecutive Summary:\nIn this study, I used MOE percentages as key metrics. I divided the large dataset into several groups to see if there were differences between them. I aim to identify counties or communities that are not suitable for data-driven decision-making processes in economic and racial aspects.\nMy findings are: communities with smaller population size are in the risk of algorithmic bias, what’s more, diverse communities with different races and various groups of people have higher MOE percentage. Economically disadvantaged communities with income inequality are also liked to have the bias issue.\nThe reasons for the data quality issues and bias risk can be: (1) Sample size. Smaller populations usually have higher sample error and missing data. Minority are hard to reach out by the census survey as well. (2) Socioeconomic and Demographic variance. Diverse communties have large internal variation, which leads to higher marginal errors.\nDepartments should not just rely on the algorithm to make their decisions. On-site investigation and community engagement is crucial to know the truth. There are stories, knowledge, and so on that can not reflect from numbers. Planners should be critical about the results of data-driven analysis."
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#specific-recommendations",
+    "href": "assignment/assignment_1/assignment_1.html#specific-recommendations",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "6.3 Specific Recommendations",
+    "text": "6.3 Specific Recommendations\nYour Task: Create a decision framework for algorithm implementation.\n\n# Create a summary table using your county reliability data\n# Include: county name, median income, MOE percentage, reliability category\n\nsummary_county &lt;- county_data %&gt;%\n  select(county_name,median_incomeE,median_incomeMOE,rel_categories)\n\nsummary_county\n\n# A tibble: 21 × 4\n   county_name median_incomeE median_incomeMOE rel_categories \n   &lt;chr&gt;                &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;          \n 1 Atlantic             73113             2.62 High Confidence\n 2 Bergen              118714             1.35 High Confidence\n 3 Burlington          102615             1.40 High Confidence\n 4 Camden               82005             1.72 High Confidence\n 5 Cape May             83870             4.42 High Confidence\n 6 Cumberland           62310             3.54 High Confidence\n 7 Essex                73785             2.00 High Confidence\n 8 Gloucester           99668             2.61 High Confidence\n 9 Hudson               86854             2.05 High Confidence\n10 Hunterdon           133534             2.42 High Confidence\n# ℹ 11 more rows\n\n# Add a new column with algorithm recommendations using case_when():\n# - High Confidence: \"Safe for algorithmic decisions\"\n# - Moderate Confidence: \"Use with caution - monitor outcomes\"  \n# - Low Confidence: \"Requires manual review or additional data\"\n\nsummary_county &lt;- summary_county %&gt;%\n  mutate(\n    recommendation = \n  case_when(\n    rel_categories == \"High Confidence\" ~ \"Safe for algorithmic decisions\",\n    rel_categories == \"Moderate Confidence\" ~ \"Use with caution - monitor outcomes\",\n    rel_categories == \"Low Confidence\" ~ \"Requires manual review or additional data\"\n  )\n  )\n\n# Format as a professional table with kable()\n\nkable(summary_county,digits = getOption(\"digits\"), caption = \"Recommendation for algorithmic decisions\")\n\n\nRecommendation for algorithmic decisions\n\n\n\n\n\n\n\n\n\ncounty_name\nmedian_incomeE\nmedian_incomeMOE\nrel_categories\nrecommendation\n\n\n\n\nAtlantic\n73113\n2.621969\nHigh Confidence\nSafe for algorithmic decisions\n\n\nBergen\n118714\n1.353673\nHigh Confidence\nSafe for algorithmic decisions\n\n\nBurlington\n102615\n1.399406\nHigh Confidence\nSafe for algorithmic decisions\n\n\nCamden\n82005\n1.724285\nHigh Confidence\nSafe for algorithmic decisions\n\n\nCape May\n83870\n4.419936\nHigh Confidence\nSafe for algorithmic decisions\n\n\nCumberland\n62310\n3.538758\nHigh Confidence\nSafe for algorithmic decisions\n\n\nEssex\n73785\n2.001762\nHigh Confidence\nSafe for algorithmic decisions\n\n\nGloucester\n99668\n2.613677\nHigh Confidence\nSafe for algorithmic decisions\n\n\nHudson\n86854\n2.051719\nHigh Confidence\nSafe for algorithmic decisions\n\n\nHunterdon\n133534\n2.423353\nHigh Confidence\nSafe for algorithmic decisions\n\n\nMercer\n92697\n2.325857\nHigh Confidence\nSafe for algorithmic decisions\n\n\nMiddlesex\n105206\n1.461894\nHigh Confidence\nSafe for algorithmic decisions\n\n\nMonmouth\n118527\n1.605541\nHigh Confidence\nSafe for algorithmic decisions\n\n\nMorris\n130808\n2.084735\nHigh Confidence\nSafe for algorithmic decisions\n\n\nOcean\n82379\n1.766227\nHigh Confidence\nSafe for algorithmic decisions\n\n\nPassaic\n84465\n1.851654\nHigh Confidence\nSafe for algorithmic decisions\n\n\nSalem\n73378\n4.152471\nHigh Confidence\nSafe for algorithmic decisions\n\n\nSomerset\n131948\n2.485828\nHigh Confidence\nSafe for algorithmic decisions\n\n\nSussex\n111094\n2.460979\nHigh Confidence\nSafe for algorithmic decisions\n\n\nUnion\n95000\n2.326316\nHigh Confidence\nSafe for algorithmic decisions\n\n\nWarren\n92620\n2.598791\nHigh Confidence\nSafe for algorithmic decisions\n\n\n\n\n\nKey Recommendations:\nYour Task: Use your analysis results to provide specific guidance to the department.\n\nCounties suitable for immediate algorithmic implementation: Low MOE group (≈ 1.85 – 1.35) Counties: Passaic, Ocean, Camden, Monmouth, Middlesex, Burlington, Bergen\nCounties requiring additional oversight: Mid MOE group (≈ 2.46 – 2.00) Counties: Sussex, Hunterdon, Union, Mercer, Morris, Hudson, Essex\nCounties needing alternative approaches: High MOE group (≈ 4.42 – 2.60) Counties: Cape May, Salem, Cumberland, Atlantic, Gloucester, Warren, Somerset"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#questions-for-further-investigation",
+    "href": "assignment/assignment_1/assignment_1.html#questions-for-further-investigation",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "Questions for Further Investigation",
+    "text": "Questions for Further Investigation\n\nDo counties with higher margins of error cluster geographically?\nDo certain counties show persistently high uncertainty?\nAre higher MOEs systematically associated with specific demographic factors?"
+  },
+  {
+    "objectID": "assignment/assignment_1/assignment_1.html#submission-checklist",
+    "href": "assignment/assignment_1/assignment_1.html#submission-checklist",
+    "title": "Assignment 1: Census Data Quality for Policy Decisions",
+    "section": "Submission Checklist",
+    "text": "Submission Checklist\nBefore submitting your portfolio link on Canvas:\n\n[✅] All code chunks run without errors\n[✅ All “[Fill this in]” prompts have been completed\n[✅] Tables are properly formatted and readable\n[✅] Executive summary addresses all four required components\n[✅] Portfolio navigation includes this assignment\n[✅] Census API key is properly set\n[✅] Document renders correctly to HTML\n\nRemember: Submit your portfolio URL on Canvas, not the file itself. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/your_file_name.html"
   },
   {
     "objectID": "labs/lab_0.html",
@@ -245,39 +343,88 @@
     "text": "5.2 Categorical Summaries\n\n# Frequency table for price categories\nFrequency_price_categories &lt;- car_data %&gt;%\n  group_by(price_category) %&gt;%\n  summarize(num_car = n())\n\nFrequency_price_categories\n\n# A tibble: 4 × 2\n  price_category num_car\n  &lt;chr&gt;            &lt;int&gt;\n1 budget           34040\n2 mid-range         6178\n3 midrange          9779\n4 &lt;NA&gt;                 3"
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html",
-    "href": "weekly-notes/week-03-notes.html",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error\n\n\n\nggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency\n\n\n\n\ndistribution\n\n\n\n\n\nleft join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
+    "text": "This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nHi, everyone! My name is Jinheng, and I am second year student in city planning program, smart cities concentration. I have strong interest in urban data science. I took GIS class and introduction to smart cities class last year, and I would like to explore more in this class.\n\n\n\n\nEmail: jinhengc@upenn.edu\nGitHub: @CenJinHeng"
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#why-visualization-matters",
-    "href": "weekly-notes/week-03-notes.html#why-visualization-matters",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error"
+    "text": "Advanced spatial analysis and data science for urban planning and public policy."
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#grammar-of-graphics",
-    "href": "weekly-notes/week-03-notes.html#grammar-of-graphics",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "index.html#portfolio-structure",
+    "href": "index.html#portfolio-structure",
+    "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "ggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency"
+    "text": "Weekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge"
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#exploratory-data-analysis",
-    "href": "weekly-notes/week-03-notes.html#exploratory-data-analysis",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "distribution"
+    "text": "Hi, everyone! My name is Jinheng, and I am second year student in city planning program, smart cities concentration. I have strong interest in urban data science. I took GIS class and introduction to smart cities class last year, and I would like to explore more in this class."
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#join",
-    "href": "weekly-notes/week-03-notes.html#join",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "left join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
+    "text": "Email: jinhengc@upenn.edu\nGitHub: @CenJinHeng"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html",
+    "href": "weekly-notes/week-02-notes.html",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "",
+    "text": "set of rules to solve problems\nissues of data-driven policy-making: what is true for a group of people is not always true for individuals"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#algorithm",
+    "href": "weekly-notes/week-02-notes.html#algorithm",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "",
+    "text": "set of rules to solve problems\nissues of data-driven policy-making: what is true for a group of people is not always true for individuals"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#difference-between-data-science-and-data-analysis",
+    "href": "weekly-notes/week-02-notes.html#difference-between-data-science-and-data-analysis",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Difference between data science and data analysis",
+    "text": "Difference between data science and data analysis\n\ndata science: focus on algorithms/methods development\ndata analytics: application"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#machine-learning-and-ai",
+    "href": "weekly-notes/week-02-notes.html#machine-learning-and-ai",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Machine learning and AI",
+    "text": "Machine learning and AI\n\nMachine learning: classification&prediction learn from data\nAI: adjust and improve across iterations"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#accidental-data",
+    "href": "weekly-notes/week-02-notes.html#accidental-data",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Accidental data",
+    "text": "Accidental data\n\nget data from open-source sources like social media platforms, instagram"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#data-analytics-is-subjective",
+    "href": "weekly-notes/week-02-notes.html#data-analytics-is-subjective",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Data analytics is subjective",
+    "text": "Data analytics is subjective\n\ndata cleaning\ndata coding\ndata collection\ninterpret results\nwhat variables to put in the model"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#decennial-census-american-community-survey-acs",
+    "href": "weekly-notes/week-02-notes.html#decennial-census-american-community-survey-acs",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Decennial Census & American Community Survey (ACS)",
+    "text": "Decennial Census & American Community Survey (ACS)\n\nDecennial Census\n\nfor everyone, full sample\n9 basic questions\nconstitutional requirement\n\nAmerican Community Survey\n\n3% surveyed annually\ndetailed questions\n5-yr estimates are more reliable"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html",
