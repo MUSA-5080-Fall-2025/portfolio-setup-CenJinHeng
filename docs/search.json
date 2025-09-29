@@ -86,37 +86,37 @@
   {
     "objectID": "weekly-notes/week-04-notes.html",
     "href": "weekly-notes/week-04-notes.html",
-    "title": "Week 3 Notes - Course Introduction",
+    "title": "Week 4 Notes - Course Introduction",
     "section": "",
-    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error\n\n\n\nggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency\n\n\n\n\ndistribution\n\n\n\n\n\nleft join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
+    "text": "geometry: shape and location\nattributes: data about the feature\ntwo forms in GIS: raster (pixel, continous) and vector (points, lines and polygons)\nformat of geo data: shp, geojson, KML/KMZ (Google Earth)…\n\n\n\n\n\nincludes shp (storaging geometry), shx, dbf (tabel)\n\n\n\n\n\ndrop geo column if it is troublesome\n\nst_intersects(): Counties affected by flooding\nst_touches(): Neighboring counties\nst_within(): Schools within district boundaries\nst_contains(): Districts containing hospitals\nst_overlaps(): Overlapping service areas\nst_disjoint(): Counties separate from urban areas\n\n\n\n\n\n\nThe Earth is round, but maps are flat\nProblems: hard to preserve area, distance, and angles simultaneously\nCalculation steps\n\nstep 1: approximate the earth Ellipsoid\nstep 2: tie the Ellipsoid into the real Earth\nstep 3: put down the lat/lng grid\n\nGeographic (Geodetic) coordinate systems (Lat/lng)\n\nMercator: keeps lines(lat) constantly long, areas far from the central line are in wrong shape\nTransverse: using Lng\nConic\ncylindrical\nplaner\n\nProjected coordinate systems\n\nUTM\n\nGCS:\n\nLat/Lng coordinated\ngood for large scale, bad for area/distance calculations\n\nPCS:\n\nX/Y coordinates on a flat plane\nunits: meters, feet\ngood for local analysis, accurate measurement, bad for large areas, global data sets\n\nst_set_crs() is to set CRS if missing, st_transform() is to change CRS"
   },
   {
-    "objectID": "weekly-notes/week-04-notes.html#why-visualization-matters",
-    "href": "weekly-notes/week-04-notes.html#why-visualization-matters",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "weekly-notes/week-04-notes.html#spatial-data",
+    "href": "weekly-notes/week-04-notes.html#spatial-data",
+    "title": "Week 4 Notes - Course Introduction",
     "section": "",
-    "text": "bias in visualization summary can hide some important details example: Anscombe’s Quartet\n\ncan not get ACS for census block, only decenial\ncensus block groups have big margin of error (ACS), T island problem\ncensus tracts are better\n\nthe smaller of the sample, the bigger margin of error"
+    "text": "geometry: shape and location\nattributes: data about the feature\ntwo forms in GIS: raster (pixel, continous) and vector (points, lines and polygons)\nformat of geo data: shp, geojson, KML/KMZ (Google Earth)…"
   },
   {
-    "objectID": "weekly-notes/week-04-notes.html#grammar-of-graphics",
-    "href": "weekly-notes/week-04-notes.html#grammar-of-graphics",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "weekly-notes/week-04-notes.html#shp",
+    "href": "weekly-notes/week-04-notes.html#shp",
+    "title": "Week 4 Notes - Course Introduction",
     "section": "",
-    "text": "ggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )\naes: - X,y - color - fill - size - shape - alpha _ transparency"
+    "text": "includes shp (storaging geometry), shx, dbf (tabel)"
   },
   {
-    "objectID": "weekly-notes/week-04-notes.html#exploratory-data-analysis",
-    "href": "weekly-notes/week-04-notes.html#exploratory-data-analysis",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "weekly-notes/week-04-notes.html#sf-package",
+    "href": "weekly-notes/week-04-notes.html#sf-package",
+    "title": "Week 4 Notes - Course Introduction",
     "section": "",
-    "text": "distribution"
+    "text": "drop geo column if it is troublesome\n\nst_intersects(): Counties affected by flooding\nst_touches(): Neighboring counties\nst_within(): Schools within district boundaries\nst_contains(): Districts containing hospitals\nst_overlaps(): Overlapping service areas\nst_disjoint(): Counties separate from urban areas"
   },
   {
-    "objectID": "weekly-notes/week-04-notes.html#join",
-    "href": "weekly-notes/week-04-notes.html#join",
-    "title": "Week 3 Notes - Course Introduction",
+    "objectID": "weekly-notes/week-04-notes.html#coordinate-reference-systems",
+    "href": "weekly-notes/week-04-notes.html#coordinate-reference-systems",
+    "title": "Week 4 Notes - Course Introduction",
     "section": "",
-    "text": "left join is preserve the table at first (often option)\nright join …. The second table\nfull join is to preserve all the tables (necessary sometimes)\ninner joint is to find the result held by both tables"
+    "text": "The Earth is round, but maps are flat\nProblems: hard to preserve area, distance, and angles simultaneously\nCalculation steps\n\nstep 1: approximate the earth Ellipsoid\nstep 2: tie the Ellipsoid into the real Earth\nstep 3: put down the lat/lng grid\n\nGeographic (Geodetic) coordinate systems (Lat/lng)\n\nMercator: keeps lines(lat) constantly long, areas far from the central line are in wrong shape\nTransverse: using Lng\nConic\ncylindrical\nplaner\n\nProjected coordinate systems\n\nUTM\n\nGCS:\n\nLat/Lng coordinated\ngood for large scale, bad for area/distance calculations\n\nPCS:\n\nX/Y coordinates on a flat plane\nunits: meters, feet\ngood for local analysis, accurate measurement, bad for large areas, global data sets\n\nst_set_crs() is to set CRS if missing, st_transform() is to change CRS"
   },
   {
     "objectID": "weekly-notes/week-03-notes.html",

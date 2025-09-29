@@ -1,38 +1,48 @@
 ---
-title: "Week 3 Notes - Course Introduction"
-date: "2025-09-22"
+title: "Week 4 Notes - Course Introduction"
+date: "2025-09-29"
 ---
 
-# Data visualization & exploratory
+# Spatial Data & GIS Operations in R
 
-## why visualization matters
+## Spatial Data
+- geometry: shape and location
+- attributes: data about the feature
+- two forms in GIS: raster (pixel, continous) and vector (points, lines and polygons)
+- format of geo data: shp, geojson, KML/KMZ (Google Earth)...
 
-bias in visualization
-summary can hide some important details
-example: Anscombe’s Quartet
+## shp 
+- includes shp (storaging geometry), shx, dbf (tabel)
 
--	can not get ACS for census block, only decenial 
--	census block groups have big margin of error (ACS), T island problem
--	census tracts are better
-
-the smaller of the sample, the bigger margin of error 
-
-## Grammar of Graphics
-ggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )
-
-aes:
--	X,y
--	color
--	fill
--	size
--	shape
--	alpha _ transparency
-
-## exploratory data analysis
--	distribution
-
-## join
--	left join is preserve the table at first (often option)
--	right join …. The second table
--	full join is to preserve all the tables (necessary sometimes)
--	inner joint is to find the result held by both tables
+## sf package
+- drop geo column if it is troublesome
+  - st_intersects(): Counties affected by flooding
+  - st_touches(): Neighboring counties
+  - st_within(): Schools within district boundaries
+  - st_contains(): Districts containing hospitals
+  - st_overlaps(): Overlapping service areas
+  - st_disjoint(): Counties separate from urban areas
+  
+## Coordinate Reference Systems
+- The Earth is round, but maps are flat
+- Problems: hard to preserve area, distance, and angles simultaneously
+- Calculation steps
+  - step 1: approximate the earth Ellipsoid
+  - step 2: tie the Ellipsoid into the real Earth
+  - step 3: put down the lat/lng grid
+- Geographic (Geodetic) coordinate systems (Lat/lng)
+  - Mercator: keeps lines(lat) constantly long, areas far from the central line are in wrong shape
+  - Transverse: using Lng
+  - Conic
+  - cylindrical
+  - planer
+- Projected coordinate systems
+  - UTM
+- GCS: 
+  - Lat/Lng coordinated
+  - good for large scale, bad for area/distance calculations
+- PCS: 
+  - X/Y coordinates on a flat plane
+  - units: meters, feet
+  - good for local analysis, accurate measurement, bad for large areas, global data sets
+- st_set_crs() is to set CRS if missing, st_transform() is to change CRS

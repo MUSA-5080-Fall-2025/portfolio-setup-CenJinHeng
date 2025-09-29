@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-09-22">
+<meta name="dcterms.date" content="2025-09-29">
 
-<title>Week 3 Notes - Course Introduction – Jinheng Cen - MUSA 5080 Portfolio</title>
+<title>Week 4 Notes - Course Introduction – Jinheng Cen - MUSA 5080 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,12 +153,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-visualization-exploratory" id="toc-data-visualization-exploratory" class="nav-link active" data-scroll-target="#data-visualization-exploratory">Data visualization &amp; exploratory</a>
+  <li><a href="#spatial-data-gis-operations-in-r" id="toc-spatial-data-gis-operations-in-r" class="nav-link active" data-scroll-target="#spatial-data-gis-operations-in-r">Spatial Data &amp; GIS Operations in R</a>
   <ul class="collapse">
-  <li><a href="#why-visualization-matters" id="toc-why-visualization-matters" class="nav-link" data-scroll-target="#why-visualization-matters">why visualization matters</a></li>
-  <li><a href="#grammar-of-graphics" id="toc-grammar-of-graphics" class="nav-link" data-scroll-target="#grammar-of-graphics">Grammar of Graphics</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">exploratory data analysis</a></li>
-  <li><a href="#join" id="toc-join" class="nav-link" data-scroll-target="#join">join</a></li>
+  <li><a href="#spatial-data" id="toc-spatial-data" class="nav-link" data-scroll-target="#spatial-data">Spatial Data</a></li>
+  <li><a href="#shp" id="toc-shp" class="nav-link" data-scroll-target="#shp">shp</a></li>
+  <li><a href="#sf-package" id="toc-sf-package" class="nav-link" data-scroll-target="#sf-package">sf package</a></li>
+  <li><a href="#coordinate-reference-systems" id="toc-coordinate-reference-systems" class="nav-link" data-scroll-target="#coordinate-reference-systems">Coordinate Reference Systems</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -168,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 3 Notes - Course Introduction</h1>
+<h1 class="title">Week 4 Notes - Course Introduction</h1>
 </div>
 
 
@@ -179,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2025</p>
+      <p class="date">September 29, 2025</p>
     </div>
   </div>
   
@@ -191,36 +191,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="data-visualization-exploratory" class="level1">
-<h1>Data visualization &amp; exploratory</h1>
-<section id="why-visualization-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-visualization-matters">why visualization matters</h2>
-<p>bias in visualization summary can hide some important details example: Anscombe’s Quartet</p>
+<section id="spatial-data-gis-operations-in-r" class="level1">
+<h1>Spatial Data &amp; GIS Operations in R</h1>
+<section id="spatial-data" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data">Spatial Data</h2>
 <ul>
-<li>can not get ACS for census block, only decenial</li>
-<li>census block groups have big margin of error (ACS), T island problem</li>
-<li>census tracts are better</li>
-</ul>
-<p>the smaller of the sample, the bigger margin of error</p>
-</section>
-<section id="grammar-of-graphics" class="level2">
-<h2 class="anchored" data-anchor-id="grammar-of-graphics">Grammar of Graphics</h2>
-<p>ggplot ( data = your_data ) + aes ( x = variable1, y = variable2 ) + geom_something ( ) + additional_layers (color… )</p>
-<p>aes: - X,y - color - fill - size - shape - alpha _ transparency</p>
-</section>
-<section id="exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis">exploratory data analysis</h2>
-<ul>
-<li>distribution</li>
+<li>geometry: shape and location</li>
+<li>attributes: data about the feature</li>
+<li>two forms in GIS: raster (pixel, continous) and vector (points, lines and polygons)</li>
+<li>format of geo data: shp, geojson, KML/KMZ (Google Earth)…</li>
 </ul>
 </section>
-<section id="join" class="level2">
-<h2 class="anchored" data-anchor-id="join">join</h2>
+<section id="shp" class="level2">
+<h2 class="anchored" data-anchor-id="shp">shp</h2>
 <ul>
-<li>left join is preserve the table at first (often option)</li>
-<li>right join …. The second table</li>
-<li>full join is to preserve all the tables (necessary sometimes)</li>
-<li>inner joint is to find the result held by both tables</li>
+<li>includes shp (storaging geometry), shx, dbf (tabel)</li>
+</ul>
+</section>
+<section id="sf-package" class="level2">
+<h2 class="anchored" data-anchor-id="sf-package">sf package</h2>
+<ul>
+<li>drop geo column if it is troublesome
+<ul>
+<li>st_intersects(): Counties affected by flooding</li>
+<li>st_touches(): Neighboring counties</li>
+<li>st_within(): Schools within district boundaries</li>
+<li>st_contains(): Districts containing hospitals</li>
+<li>st_overlaps(): Overlapping service areas</li>
+<li>st_disjoint(): Counties separate from urban areas</li>
+</ul></li>
+</ul>
+</section>
+<section id="coordinate-reference-systems" class="level2">
+<h2 class="anchored" data-anchor-id="coordinate-reference-systems">Coordinate Reference Systems</h2>
+<ul>
+<li>The Earth is round, but maps are flat</li>
+<li>Problems: hard to preserve area, distance, and angles simultaneously</li>
+<li>Calculation steps
+<ul>
+<li>step 1: approximate the earth Ellipsoid</li>
+<li>step 2: tie the Ellipsoid into the real Earth</li>
+<li>step 3: put down the lat/lng grid</li>
+</ul></li>
+<li>Geographic (Geodetic) coordinate systems (Lat/lng)
+<ul>
+<li>Mercator: keeps lines(lat) constantly long, areas far from the central line are in wrong shape</li>
+<li>Transverse: using Lng</li>
+<li>Conic</li>
+<li>cylindrical</li>
+<li>planer</li>
+</ul></li>
+<li>Projected coordinate systems
+<ul>
+<li>UTM</li>
+</ul></li>
+<li>GCS:
+<ul>
+<li>Lat/Lng coordinated</li>
+<li>good for large scale, bad for area/distance calculations</li>
+</ul></li>
+<li>PCS:
+<ul>
+<li>X/Y coordinates on a flat plane</li>
+<li>units: meters, feet</li>
+<li>good for local analysis, accurate measurement, bad for large areas, global data sets</li>
+</ul></li>
+<li>st_set_crs() is to set CRS if missing, st_transform() is to change CRS</li>
 </ul>
 
 
