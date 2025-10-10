@@ -26,6 +26,8 @@ website:
         menu:
           - href: assignments/assignment_1/assignment_1.qmd
             text: "Assignment 1: Census Data Exploration"
+          - href: assignments/assignment_2/Cen_Jinheng_Assignment2.qmd
+            text: "Assignment 2: Spatial Analysis and Visualization"
             
 format:
   html:
