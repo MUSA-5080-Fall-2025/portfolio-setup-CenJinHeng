@@ -57,8 +57,6 @@ library(patchwork)
 library(here)
 library(knitr)
 
-census_api_key("42bf8a20a3df1def380f330cf7edad0dd5842ce6", install = TRUE, overwrite=TRUE)
-
 # Load spatial data
 pa_counties <- st_read("data/Pennsylvania_County_Boundaries.shp")
 hospitals <- st_read("data/hospitals.geojson")
@@ -1006,6 +1004,8 @@ School zones have fewer crime incidents and bike lane length compared to city av
 
 ## Finally - A few comments about your incorporation of feedback!
 Take a few moments to clean up your markdown document and then write a line or two or three about how you may have incorporated feedback that you recieved after your first assignment. 
+
+I need to hide my API Key!
 
 ---
 
