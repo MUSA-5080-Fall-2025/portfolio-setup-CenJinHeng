@@ -1,9 +1,11 @@
 {
-  "hash": "a9a2c5785dee0a8699aa830a96eae890",
+  "hash": "e0f3ecc31b8bac1b58e2d9633324301d",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Week 7 Notes - Course Introduction\"\ndate: \"2025-10-20\"\n---\n\n# Model Diagnostics & Spatial Autocorrelation\n\n## rendering issues\n- Add **progress = FALSE** in each function call\n- Set globally on the top of the doc\n\n::: {.cell}\n\n```{.r .cell-code}\n# Add this near the top of your .qmd after loading libraries\noptions(tigris_use_cache = TRUE)\noptions(tigris_progress = FALSE)  # Suppress tigris progress bars\n```\n:::\n\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Week 7 Notes - Course Introduction\"\ndate: \"2025-10-20\"\n---\n\n# Model Diagnostics & Spatial Autocorrelation\n\n## rendering issues\n- Add **progress = FALSE** in each function call\n- Set globally on the top of the doc\n\n::: {.cell}\n\n```{.r .cell-code}\n# Add this near the top of your .qmd after loading libraries\noptions(tigris_use_cache = TRUE)\noptions(tigris_progress = FALSE)  # Suppress tigris progress bars\n```\n:::\n\n- evaluation and echo\n\n::: {.cell}\n\n```{.r .cell-code}\n# eval = true, run the code; echo = true, show the result\n```\n:::\n\n",
+    "supporting": [
+      "week-07-notes_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

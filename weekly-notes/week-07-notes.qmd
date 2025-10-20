@@ -13,3 +13,7 @@ date: "2025-10-20"
 options(tigris_use_cache = TRUE)
 options(tigris_progress = FALSE)  # Suppress tigris progress bars
 ```
+- evaluation and echo
+```{r example1, eval=FALSE, echo=TRUE}
+# eval = true, run the code; echo = true, show the result
+```
