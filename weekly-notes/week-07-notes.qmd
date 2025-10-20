@@ -20,7 +20,6 @@ options(tigris_progress = FALSE)  # Suppress tigris progress bars
 
 # regression evaluation
 - good error is random
-- 
 
 # Moran's I
 - measure spatial autocorrelation
