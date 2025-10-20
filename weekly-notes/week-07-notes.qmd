@@ -26,6 +26,8 @@ options(tigris_progress = FALSE)  # Suppress tigris progress bars
 - measure spatial autocorrelation
   - +1 shows that has positive correlation (cluster)
   - 0 random
-  - -1 shows that has negative correlation (cluster)
-  
-# 
+  - -1 shows that has negative correlation (dispersion)
+
+# Neighbors
+- Queen: share the same border and corner
+- rook: share the same border
