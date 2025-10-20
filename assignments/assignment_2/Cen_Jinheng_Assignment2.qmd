@@ -108,7 +108,8 @@ tract_data <- get_acs(
   ),
   year = 2023,
   survey = "acs5",
-  output = "wide"
+  output = "wide",
+  progress = FALSE
 )
 
 age_data <- get_acs(
@@ -120,6 +121,7 @@ age_data <- get_acs(
   ),
   year = 2023,
   survey = "acs5",
+  progress = FALSE
 ) %>% 
   group_by (GEOID) %>%
   summarise(pop_65 = sum(estimate, na.rm = TRUE))

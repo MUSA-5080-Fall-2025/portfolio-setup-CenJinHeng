@@ -17,3 +17,15 @@ options(tigris_progress = FALSE)  # Suppress tigris progress bars
 ```{r example1, eval=FALSE, echo=TRUE}
 # eval = true, run the code; echo = true, show the result
 ```
+
+# regression evaluation
+- good error is random
+- 
+
+# Moran's I
+- measure spatial autocorrelation
+  - +1 shows that has positive correlation (cluster)
+  - 0 random
+  - -1 shows that has negative correlation (cluster)
+  
+# 
