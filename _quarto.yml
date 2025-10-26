@@ -30,6 +30,8 @@ website:
             text: "Assignment 1: Census Data Exploration"
           - href: assignments/assignment_2/Cen_Jinheng_Assignment2.qmd
             text: "Assignment 2: Spatial Analysis and Visualization"
+          - href: assignments/mid_term_challenge/Midterm_slides_v3.qmd
+            text: "Mid Term Challenge: Philadelphia Housing Price Prediction - Slide"
             
 format:
   html:
