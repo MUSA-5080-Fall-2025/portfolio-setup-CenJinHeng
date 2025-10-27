@@ -32,6 +32,12 @@ website:
             text: "Assignment 2: Spatial Analysis and Visualization"
           - href: assignments/mid_term_challenge/Midterm_slides_v3.qmd
             text: "Mid Term Challenge: Philadelphia Housing Price Prediction - Slide"
+      - text: Midterm
+        menu: 
+          - href: midterm/appendix/Midterm_2025.qmd
+            text: "Single-Family Home Price Prediction in Philadelphia"
+          - href: midterm/slides/Midterm_slides_v3.qmd
+            text: "Improving Property Tax Assessments"
             
 format:
   html:
