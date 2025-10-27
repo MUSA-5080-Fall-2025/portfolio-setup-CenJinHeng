@@ -30,14 +30,12 @@ website:
             text: "Assignment 1: Census Data Exploration"
           - href: assignments/assignment_2/Cen_Jinheng_Assignment2.qmd
             text: "Assignment 2: Spatial Analysis and Visualization"
-          - href: assignments/mid_term_challenge/Midterm_slides_v3.qmd
-            text: "Mid Term Challenge: Philadelphia Housing Price Prediction - Slide"
       - text: Midterm
         menu: 
           - href: midterm/appendix/Midterm_2025.qmd
-            text: "Single-Family Home Price Prediction in Philadelphia"
+            text: "Appendix: Philadelphia Housing Price Prediction"
           - href: midterm/slides/Midterm_slides_v3.qmd
-            text: "Improving Property Tax Assessments"
+            text: "Slide: Philadelphia Housing Price Prediction"
             
 format:
   html:
