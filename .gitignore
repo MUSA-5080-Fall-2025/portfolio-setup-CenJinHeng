@@ -1,3 +1,4 @@
 /.quarto/
 **/*.quarto_ipynb
 assignments/assignment_4/data/burglary.dbf
+.Rproj.user
