@@ -17,9 +17,15 @@ website:
           - href: weekly-notes/week-03-notes.qmd
             text: Week 3  
           - href: weekly-notes/week-04-notes.qmd
-            text: Week 4 
+            text: Week 4
+          - href: weekly-notes/week-05-notes.qmd
+            text: Week 5
+          - href: weekly-notes/week-06-notes.qmd
+            text: Week 6 
           - href: weekly-notes/week-07-notes.qmd
-            text: Week 7 
+            text: Week 7  
+          - href: weekly-notes/week-09-notes.qmd
+            text: Week 9 
       - text: Labs
         menu:
           - href: labs/lab_0.qmd
@@ -30,6 +36,8 @@ website:
             text: "Assignment 1: Census Data Exploration"
           - href: assignments/assignment_2/Cen_Jinheng_Assignment2.qmd
             text: "Assignment 2: Spatial Analysis and Visualization"
+          - href: assignments/assignment_4/Cen_Jinheng_Assignment4.qmd
+            text: "Assignment 4: Predictive Policing"
       - text: Midterm
         menu: 
           - href: midterm/appendix/Midterm_2025.qmd

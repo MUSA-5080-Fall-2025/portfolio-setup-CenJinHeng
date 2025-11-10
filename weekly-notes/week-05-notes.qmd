@@ -1,0 +1,87 @@
+---
+title: "Week 4 Notes - Course Introduction"
+date: "2025-10-06"
+---
+
+# Introduction to Linear Regression (Week 5)
+
+## 1. Statistical Learning Framework
+- Goal: Estimate the function **f(X)** that relates predictors (X) to an outcome (Y).
+- Model: **Y = f(X) + ε**
+  - f(X): systematic relationship (fixed but unknown)
+  - ε: random error (irreducible)
+- Two main approaches:
+  - **Parametric**: assumes a specific form (e.g., linear), easier to interpret.
+  - **Non-parametric**: flexible, requires more data, harder to interpret.
+- Linear regression is a **parametric** method assuming linearity.
+
+---
+
+## 2. Purposes of Modeling
+- **Inference**: understand how X affects Y.
+  - Focus on coefficients and statistical significance.
+- **Prediction**: estimate Y for new observations.
+  - Focus on accuracy, not interpretation.
+- A model can be statistically good but ethically harmful.
+
+---
+
+## 3. Model Building and Evaluation
+- **OLS (Ordinary Least Squares)**: estimates βs minimizing squared errors.
+- Example: median income ~ population (PA counties).
+- **Interpretation**:
+  - β₀ = intercept (baseline)
+  - β₁ = change in Y for one-unit change in X
+- **R²**: proportion of variance explained (in-sample fit).
+  - In-sample fit ≠ out-of-sample performance.
+- **Overfitting**: too complex, fits noise.
+- Use **train/test split** or **cross-validation (CV)** to evaluate generalization.
+  - 10-fold CV provides more stable estimates.
+  - Key metrics: RMSE, MAE, R².
+
+---
+
+## 4. Model Assumptions and Diagnostics
+Linear regression assumptions:
+1. **Linearity**: relationship between X and Y is linear.
+   - Check residual plot → random scatter = good.
+2. **Constant variance (Homoscedasticity)**:
+   - Violations → heteroskedasticity.
+   - Check with Breusch-Pagan test.
+3. **Normality of residuals**:
+   - Use Q-Q plot.
+   - Matters for inference, less for prediction.
+4. **No multicollinearity** (only in multiple regression):
+   - Check Variance Inflation Factor (VIF).
+5. **No influential outliers**:
+   - Check Cook’s D and leverage.
+   - Investigate, don’t automatically remove.
+
+---
+
+## 5. Improving the Model
+- Add more predictors (education, poverty rate, etc.).
+- Use **transformations** (e.g., log) to handle nonlinearity.
+- Include **categorical variables** (e.g., metro/non-metro).
+- Always re-check assumptions after modifications.
+
+---
+
+## 6. Ethical and Analytical Awareness
+- Model quality ≠ fairness.
+- Outliers may represent important or marginalized cases.
+- Never remove data points without investigation.
+- Evaluate model implications in policy contexts.
+
+---
+
+## 7. Regression Workflow Summary
+1. Understand problem and define goal.
+2. Visualize relationships.
+3. Fit the model.
+4. Evaluate fit and predictive performance.
+5. Check assumptions and diagnostics.
+6. Refine with transformations or added variables.
+7. Consider ethical implications.
+
+---

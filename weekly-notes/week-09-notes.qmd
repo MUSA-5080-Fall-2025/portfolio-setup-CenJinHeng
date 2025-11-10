@@ -1,0 +1,107 @@
+---
+title: "Week 9 Notes - Course Introduction"
+date: "2025-11-01"
+---
+
+# Critical Perspectives on Predictive Policing (Week 9)
+
+## 1. Foundational Question
+- Before building predictive policing models, we must ask: **Should we?**
+- A model can be statistically valid yet socially harmful.
+- Technical performance ≠ ethical justification.
+
+---
+
+## 2. The Promise vs. the Reality
+**Promised benefits:**
+- Efficiency, objectivity, proactivity, data-driven policing.
+
+**Underlying assumptions:**
+1. Crime data reflects real crime (false).
+2. Past data predicts future crime (often just predicts policing).
+3. “Good” data can be isolated from “bad” (rarely).
+4. Technology can fix social problems (cannot).
+
+**Reality:** Predictive systems often reproduce and reinforce structural bias.
+
+---
+
+## 3. Dirty Data and Its Sources
+**Traditional “dirty” data:** missing, inaccurate, inconsistent.
+
+**Expanded definition (Richardson et al. 2019):**
+- Data influenced by **biased, unlawful, or corrupt practices**.
+
+**Key forms:**
+1. Fabricated or manipulated data (e.g., false arrests, downgraded offenses).
+2. Systematically biased data (over-/under-policing patterns).
+3. Missing or incomplete records (unreported crimes).
+4. Proxy data (arrests ≠ crime, calls ≠ need).
+
+**Result:** Predictive models trained on distorted representations of reality.
+
+---
+
+## 4. Case Studies
+**Baltimore:**
+- Misclassification of assaults, planted evidence, data manipulation.
+- “Juking the stats” → inflated police success metrics.
+
+**NYPD & CompStat:**
+- Pressure for low crime rates → falsified data.
+- Downgrading serious crimes, coercing victims, fabricated arrests.
+
+**Feedback loop:** biased data → biased predictions → targeted policing → more biased data.
+
+---
+
+## 5. Why Cleaning Isn’t Enough
+- **Crime reports** reflect officer discretion.
+- **Calls for service** reflect community bias and gentrification.
+- “Clean data” is a myth; all crime data is socially constructed and politically shaped.
+- Data records policing patterns, not crime itself.
+
+---
+
+## 6. Consequences and Harms
+**False positives:** over-policing, surveillance, stress, community distrust.  
+**False negatives:** under-protection, neglect.  
+**Both** disproportionately affect marginalized communities.
+
+---
+
+## 7. Reform and Consent Decrees
+**Typical reforms:** training, oversight, data collection, transparency.  
+**What’s missing:**  
+- Historical data correction, vendor accountability, algorithmic transparency.  
+**Example:** Chicago consent decree (2019) lacked restrictions on biased data use.
+
+---
+
+## 8. Critical Evaluation Framework
+Key questions for assessing predictive systems:
+1. **Data provenance:** When and how was data collected? Was it lawful?
+2. **Variable selection:** Which inputs embed bias?
+3. **Validation:** Who bears false positives/negatives?
+4. **Deployment:** How are predictions operationalized?
+5. **Accountability:** Who audits, explains, or challenges outputs?
+6. **Alternatives:** Are resources used for prevention or punishment?
+
+---
+
+## 9. Technical vs. Ethical Accuracy
+- A system predicting “where police will arrest” may be *accurate* but unjust.
+- “Success” metrics often measure predictive policing efficiency, not safety or equity.
+
+---
+
+## 10. Toward Ethical Predictive Modeling
+**Reframe the question:**
+- Instead of predicting crime → predict **social need**.
+- Example applications:
+  - Eviction risk → legal aid.
+  - Health risk → care outreach.
+  - Dropout risk → educational support.
+  - Food insecurity → resource allocation.
+
+**Principle:** Predict for care, not control.

@@ -1,0 +1,112 @@
+---
+title: "Week 6 Notes - Course Introduction"
+date: "2025-10-13"
+---
+
+# Spatial Machine Learning & Advanced Regression (Week 6)
+
+## 1. Baseline Structural Model
+- Start with a simple linear regression using structural features only (e.g., LivingArea → SalePrice).
+- Interpretation:
+  - Coefficients show marginal effects (e.g., $ per sq ft).
+  - Even if coefficients are significant, R² can be low.
+- Limitation:
+  - Large share of price variation remains unexplained without location and neighborhood context.
+
+---
+
+## 2. Categorical Variables and Fixed Effects
+- Categorical variables (e.g., neighborhood) enter the model via dummy variables.
+- R automatically:
+  - Creates (n-1) dummies.
+  - Chooses one category as reference.
+- Interpretation:
+  - Dummy coefficient = price premium/discount relative to reference, holding other variables constant.
+- Neighborhood fixed effects:
+  - Absorb unobserved neighborhood characteristics (schools, amenities, reputation).
+  - Typically produce large gains in explanatory power and predictive accuracy.
+  - Trade-off: less interpretability of why differences exist.
+
+---
+
+## 3. Interaction Terms
+- Use interactions when the effect of one variable depends on another.
+  - Example: LivingArea × WealthyNeighborhood.
+- Without interaction:
+  - Same slope for all groups; only intercept shifts.
+- With interaction:
+  - Both intercept and slope can differ by group.
+  - Captures heterogeneous returns to size across market segments.
+- Interpretation:
+  - Interaction coefficient adjusts the slope for specific categories.
+  - Check if interaction improves fit (R², CV) and is substantively meaningful.
+
+---
+
+## 4. Polynomial Terms (Non-Linear Effects)
+- Use polynomial terms (e.g., Age and Age²) when relationships are not linear.
+  - Typical pattern: U-shaped or inverted-U.
+- Implementation:
+  - Use `I(Age^2)` in formulas to treat squared term literally.
+- Interpretation:
+  - Coefficients not directly intuitive.
+  - Marginal effect of Age = β₁ + 2β₂·Age.
+- Evaluate:
+  - Compare R² and F-test between linear and polynomial models.
+  - Use residual plots to check improvement.
+
+---
+
+## 5. Spatial Features: Why Space Matters
+- Tobler’s First Law: nearby observations are more related than distant ones.
+- Housing prices depend on:
+  - Local crime, amenities, accessibility, neighborhood environment.
+- Three common spatial feature constructions:
+  1. Buffer counts:
+     - Count events (e.g., crimes) within a fixed radius.
+  2. k-Nearest Neighbors (kNN):
+     - Average distance to k nearest events.
+  3. Distance to key points:
+     - Distance to CBD, transit, parks, etc.
+- These features convert spatial context into usable numeric predictors.
+
+---
+
+## 6. Combining Structural, Spatial, and Fixed Effects
+- Model layering:
+  - Structural only → + spatial features → + neighborhood fixed effects.
+- Typical pattern:
+  - Each step improves predictive performance.
+  - Spatial features capture continuous location effects.
+  - Fixed effects absorb remaining unobserved neighborhood-level heterogeneity.
+- Important:
+  - Coefficients on spatial variables can change once fixed effects are included (less confounding).
+
+---
+
+## 7. Cross-Validation with Categorical Variables
+- Use k-fold CV (e.g., 10-fold) to evaluate out-of-sample performance.
+- Problem:
+  - Sparse categories (few observations in some neighborhoods) can lead to:
+    - “New level” errors in test folds.
+    - Unstable estimates.
+- Solutions:
+  - Check counts per category before CV.
+  - Group rare categories into an “Other/Small_Neighborhoods” class.
+  - Alternatively, drop categories with extremely low counts (must be documented and justified).
+- Use CV metrics (RMSE, MAE) to compare:
+  - Structural vs spatial vs fixed-effect models.
+
+---
+
+## 8. Practical Modeling Workflow (Hedonic / Spatial Regression)
+1. Build a simple structural baseline.
+2. Add categorical variables and interpret relative effects.
+3. Introduce interactions where theory suggests heterogeneous effects.
+4. Add polynomial terms to capture non-linearities.
+5. Engineer spatial features (buffers, kNN, distances).
+6. Add neighborhood fixed effects to capture unobserved context.
+7. Use k-fold CV to select models based on predictive performance.
+8. Inspect residuals and diagnose specification issues at each step.
+
+---
