@@ -128,7 +128,7 @@ We're using `ESRI:102271` (Illinois State Plane East, NAD83, US Feet). This is a
 #| message: false
 
 # Load from provided data file (downloaded from Chicago open data portal)
-burglaries <- st_read("data/burglary.shp") %>% 
+burglaries <- st_read("data/burglaries.shp") %>% 
   st_transform('ESRI:102271')
 
 # Check the data
@@ -172,13 +172,6 @@ Before proceeding, consider where this data came from:
 #| fig-width: 10
 #| fig-height: 5
 
-library(dplyr)
-library(sf)
-
-burglaries <- burglaries %>%
-  mutate(Creation.D = as.Date(Creation.D, format = "%m/%d/%Y")) %>%
-  filter(format(Creation.D, "%Y") == "2017")
-
 
 # Simple point map
 p1 <- ggplot() + 
@@ -220,7 +213,7 @@ p1 + p2 +
 
 *Your answer here:*
 
--   Burglaries are not evenly distributed. There are two clusters in the density map. Lincoln Park and South Side are the highest concentrations (told from Google map). Since I am not familiar with Chicago, I just assumed that these are suburban neighbors that have lower revenue that leads to poorly maintenance, so they have more sanitation reports.
+-   Burglaries are not evenly distributed. There are two clusters in the density map. Lincoln Square and South Side are the highest concentrations (told from Google map). Since I am not familiar with Chicago, I just assumed that these are suburban neighbors that have lower revenue that leads to poorly maintenance, according to "broken window theory", there are likely more burglaries.
 
 # Part 2: Create Fishnet Grid
 
@@ -259,8 +252,7 @@ cat("  - Cell area:", round(st_area(fishnet[1,])), "square meters\n")
 *Your answer here:*
 
 -   We need fishnet to covert data points into areas that can be calculated for our modeling
--   Fishnet has a consistent size, so there are no boundary bias. It is a standard approach commonly used in policy analysis. It is easy to create and aggregate point data.
--   Howerver, it might split natural areas.
+-   Fishnet has a consistent size, so there are no boundary bias. It is a standard approach commonly used in policy analysis. Additionally, It is easy to create and aggregate point data. Howerver, it might split natural areas.
 
 ## Exercise 2.2: Aggregate Burglaries to Grid
 
@@ -310,11 +302,15 @@ ggplot() +
 
 *Your answer here:*
 
--   There are a few cells having very high amount. Cells with high amount concentrated in certain areas, reflecting the first law of geography.
+-   Cells with high amount concentrated in nearby areas, reflecting the first law of geography.
 
--   Zero burglaries cells are in natural areas like parks, rivers
+-   Reasons explaining cells that are zero:
 
--   Our assumption is that variance = mean, however, the reality is that Variance \> Mean, cuz we have a lot cells counted zero, making the distribution not suitable for our regression.
+    -   They are in natural areas like parks, rivers, where few burglaries happened
+
+    -   Data might be missed due to errors in data collecting, cleaning, transforming process
+
+-   Our assumption is that variance = mean, however, the reality is that Variance \> Mean, cuz we have a lot cells counted zero, making the distribution not suitable for our regression model.
 
 # Part 3: Create a Kernel Density Baseline
 
@@ -377,9 +373,9 @@ ggplot() +
 
 *Your answer here:*
 
--   It better reflects regional characteristics across multiple grids that the count map, and it smooths out outliers.
+-   It better reflects regional characteristics across multiple grids, and it smooths out outliers (like zero cells).
 
--   It lost the details in local level.
+-   It lost the details in local level. Some zero cells in the count map show very high value here due to the influence of nearby high-value cells.
 
 ::: callout-tip
 ## Why Start with KDE?
@@ -400,17 +396,13 @@ Now we'll create features that might help predict burglaries. We'll use "broken 
 ```{r load-abandoned-cars}
 #| message: false
 
-abandoned_cars <- read_csv("data/abandoned_cars.csv")%>%
-  filter(!is.na(Latitude), !is.na(Longitude)) %>%
-  st_as_sf(coords = c("Longitude", "Latitude"), crs = 4326) %>%
+abandoned_building <- read_csv("data/311_calls.csv")%>%
+  filter(!is.na(LATITUDE), !is.na(LONGITUDE)) %>%
+  st_as_sf(coords = c("LONGITUDE", "LATITUDE"), crs = 4326) %>%
   st_transform('ESRI:102271')
 
-abandoned_cars_2017 <- abandoned_cars %>%
-  mutate(`Creation Date` = as.Date(`Creation Date`, format = "%m/%d/%Y")) %>%
-  filter(format(`Creation Date`, "%Y") == "2017")
-
 cat("✓ Loaded abandoned vehicle calls\n")
-cat("  - Number of calls:", nrow(abandoned_cars), "\n")
+cat("  - Number of calls:", nrow(abandoned_building), "\n")
 ```
 
 ::: callout-note
@@ -425,18 +417,18 @@ The data was downloaded from Chicago's Open Data Portal. You can now request an 
 
 ```{r count-abandoned-cars}
 # Aggregate abandoned car calls to fishnet
-abandoned_fishnet <- st_join(abandoned_cars, fishnet, join = st_within) %>%
+abandoned_fishnet <- st_join(abandoned_building, fishnet, join = st_within) %>%
   st_drop_geometry() %>%
   group_by(uniqueID) %>%
-  summarize(abandoned_cars = n())
+  summarize(abandoned_building = n())
 
 # Join to fishnet
 fishnet <- fishnet %>%
   left_join(abandoned_fishnet, by = "uniqueID") %>%
-  mutate(abandoned_cars = replace_na(abandoned_cars, 0))
+  mutate(abandoned_building = replace_na(abandoned_building, 0))
 
 cat("Abandoned car distribution:\n")
-summary(fishnet$abandoned_cars)
+summary(fishnet$abandoned_building)
 ```
 
 ```{r visualize-abandoned-cars}
@@ -444,9 +436,9 @@ summary(fishnet$abandoned_cars)
 #| fig-height: 4
 
 p1 <- ggplot() +
-  geom_sf(data = fishnet, aes(fill = abandoned_cars), color = NA) +
+  geom_sf(data = fishnet, aes(fill = abandoned_building), color = NA) +
   scale_fill_viridis_c(name = "Count", option = "magma") +
-  labs(title = "Abandoned Vehicle 311 Calls") +
+  labs(title = "Abandoned Buildings 311 Calls") +
   theme_crime()
 
 p2 <- ggplot() +
@@ -456,16 +448,16 @@ p2 <- ggplot() +
   theme_crime()
 
 p1 + p2 +
-  plot_annotation(title = "Are abandoned cars and burglaries correlated?")
+  plot_annotation(title = "Are abandoned buildings and burglaries correlated?")
 ```
 
-**Question 4.1:** Do you see a visual relationship between abandoned cars and burglaries? What does this suggest?
+**Question 4.1:** Do you see a visual relationship between abandoned buildings and burglaries? What does this suggest?
 
 *Your answer here:*
 
--   The spatial pattern is not obviously visible in Burglaries map due to some very high values. Spatial pattern is not perfectly matched in these two maps: The northwestern region has a large number of abandoned vehicles, yet burglaries are rarely reported in these areas. Same situation for the mid-western areas.
+-   Spatial pattern is not perfectly matched in these two maps: Clusters are not matched between these two maps — There are four clusters of abandoned buildings, particularly concentrated in the south-central area, while residential burglaries are more widely dispersed across the southern and northern suburbs.
 
--   These maps suggest that abandoned car and burglaries might be strongly correlated, which should be alarmed for our future model building.
+-   These maps suggest that abandoned buildings and burglaries might be strongly correlated, which should be alarmed for our future model building.
 
 ## Exercise 4.3: Nearest Neighbor Features
 
@@ -479,7 +471,7 @@ Count in a cell is one measure. Distance to the nearest 3 abandoned cars capture
 
 # Get coordinates
 fishnet_coords <- st_coordinates(st_centroid(fishnet))
-abandoned_coords <- st_coordinates(abandoned_cars)
+abandoned_coords <- st_coordinates(abandoned_building)
 
 # Calculate k nearest neighbors and distances
 nn_result <- get.knnx(abandoned_coords, fishnet_coords, k = 3)
@@ -487,18 +479,18 @@ nn_result <- get.knnx(abandoned_coords, fishnet_coords, k = 3)
 # Add to fishnet
 fishnet <- fishnet %>%
   mutate(
-    abandoned_cars.nn = rowMeans(nn_result$nn.dist)
+    abandoned_building.nn = rowMeans(nn_result$nn.dist)
   )
 
 cat("✓ Calculated nearest neighbor distances\n")
-summary(fishnet$abandoned_cars.nn)
+summary(fishnet$abandoned_building.nn)
 ```
 
-**Question 4.2:** What does a low value of `abandoned_cars.nn` mean? A high value? Why might this be informative?
+**Question 4.2:** What does a low value of `abandoned_building.nn` mean? A high value? Why might this be informative?
 
 *Your answer here:*
 
--   
+-   `abandoned_building.nn` showing mean distance to 3 nearest abandoned buildings. A low value reflects that abandoned buildings are close to each other, while a high value shows that they are far and more spread. This number can give us a simple sense of the distribution rule of our data.
 
 ## Exercise 4.4: Distance to Hot Spots
 
@@ -536,8 +528,9 @@ calculate_local_morans <- function(data, variable, k = 5) {
     )
 }
 
-# Apply to abandoned cars
-fishnet <- calculate_local_morans(fishnet, "abandoned_cars", k = 5)
+# Apply to abandoned building
+fishnet <- calculate_local_morans(fishnet, "abandoned_building", k = 5)
+
 ```
 
 ```{r visualize-morans}
@@ -562,7 +555,7 @@ ggplot() +
     name = "Cluster Type"
   ) +
   labs(
-    title = "Local Moran's I: Abandoned Car Clusters",
+    title = "Local Moran's I: Abandoned buildings Clusters",
     subtitle = "High-High = Hot spots of disorder"
   ) +
   theme_crime()
@@ -598,7 +591,15 @@ if (nrow(hotspots) > 0) {
 
 -   it helps us to capture spatial dependence at regional level. (we have calculate the spatial dependence at local and neighborhood levels). It omits the influence of outliers and captures spillover effects, which improves prediction accuracy.
 
--   Abandoned cars are concentrated in the northwest, while there are fewer abandoned vehicles in the southeast.
+-   Local Moran's I is a local measure. It shows the difference of local location from mean.
+
+    -   The High-High type shows that the location value is above mean and the neighbor value is also above mean, which can be interpreted as hot spot.
+
+    -   The Low-Low type shows that the location value is below mean and the neighbor value is also below mean, which can be interpreted as cold spot.
+
+    -   The High-Low type shows that the location value is above mean,but the neighbor value is below mean, which can be interpreted as outlier.
+
+    -   The Low-High type shows that the location value is below mean,but the neighbor value is above mean, which can also be interpreted as outlier.
 
 ::: callout-note
 **Local Moran's I** identifies:
@@ -645,8 +646,8 @@ fishnet_model <- fishnet %>%
     uniqueID,
     District,
     countBurglaries,
-    abandoned_cars,
-    abandoned_cars.nn,
+    abandoned_building,
+    abandoned_building.nn,
     dist_to_hotspot
   ) %>%
   na.omit()  # Remove any remaining NAs
@@ -659,7 +660,7 @@ cat("  - Variables:", ncol(fishnet_model), "\n")
 ```{r fit-poisson}
 # Fit Poisson regression
 model_poisson <- glm(
-  countBurglaries ~ abandoned_cars + abandoned_cars.nn + 
+  countBurglaries ~ abandoned_building + abandoned_building.nn + 
     dist_to_hotspot,
   data = fishnet_model,
   family = "poisson"
@@ -673,13 +674,13 @@ summary(model_poisson)
 
 *Your answer here:*
 
--   Variables that are significant: abandoned_cars, abandoned_cars.nn, dist_to_hotspot
+-   Variables that are significant: abandoned_building, abandoned_building.nn, dist_to_hotspot
 
--   The positive coefficient for `abandoned_cars` indicates that areas with more abandoned cars tend to experience higher burglary counts (sanitation reports). 
+-   The positive coefficient for `abandoned_building` indicates that areas with more abandoned buildings tend to experience higher burglary counts. 
 
--   The negative coefficient for `abandoned_cars.nn` suggests that abandoned cars located closer together are associated with higher burglary counts.
+-   The negative coefficient for `abandoned_building.nn` suggests that abandoned buildings located closer together are associated with higher burglary counts.
 
--   The negative coefficient for `dist_to_hotspot` indicates that higher near clusters of abandoned cars (hotspots) are associated with higher burglary counts.
+-   The negative coefficient for `dist_to_hotspot` indicates that higher near clusters of abandoned buildings (hotspots) are associated with higher burglary counts.
 
 ## Exercise 6.2: Check for Overdispersion
 
@@ -707,7 +708,7 @@ If overdispersed, use **Negative Binomial regression** (more flexible).
 ```{r fit-negbin}
 # Fit Negative Binomial model
 model_nb <- glm.nb(
-  countBurglaries ~ abandoned_cars + abandoned_cars.nn + 
+  countBurglaries ~ abandoned_building + abandoned_building.nn + 
     dist_to_hotspot,
   data = fishnet_model
 )
@@ -752,7 +753,7 @@ for (i in seq_along(districts)) {
   
   # Fit model on training data
   model_cv <- glm.nb(
-    countBurglaries ~ abandoned_cars + abandoned_cars.nn + 
+    countBurglaries ~ abandoned_building + abandoned_building.nn + 
       dist_to_hotspot,
     data = train_data
   )
@@ -829,7 +830,7 @@ Remember learning about train/test splits and cross-validation? This is a spatia
 ```{r final-predictions}
 # Fit final model on all data
 final_model <- glm.nb(
-  countBurglaries ~ abandoned_cars + abandoned_cars.nn + 
+  countBurglaries ~ abandoned_building + abandoned_building.nn + 
     dist_to_hotspot,
   data = fishnet_model
 )
@@ -908,9 +909,9 @@ comparison %>%
 
 *Your answer here:*
 
--   Sadly, the complex model perform worse than the KDE baseline. RMSE for KDE is 9.12, while RMSE for the complex model is 10.29.
+-   Sadly, the complex model perform worse than the KDE baseline. RMSE for KDE is 2.95, while RMSE for the complex model is 3.28.
 
--   Sanitation report is not so strongly correlated with abandoned car. Next step might include trying another predictor, adding more predictor, or changing the spatial feature.
+-   The added model complexity does not yield better predictive accuracy. Next step might include trying another predictor, adding more predictor, or changing the spatial feature.
 
 ## Exercise 9.3: Where Does the Model Work Well?
 
@@ -952,7 +953,7 @@ p1 + p2
 
 *Your answer here:*
 
--   Model errors perform randomly in their spatial distribution. There are a few cells recorded extremely high value in absolute model errors, however, they are randomly dispersed.
+-   Model errors perform randomly in their spatial distribution. There are a few cells recorded high value in absolute model errors, however, they are randomly dispersed.
 
 -   This indicates that the model's performance was not affected by spatial correlations.
 
@@ -980,13 +981,11 @@ model_summary %>%
 
 ## Exercise 10.2: Key Findings Summary
 
-Based on your analysis, complete this summary:
-
 **Technical Performance:**
 
--   Cross-validation MAE: `6.06`
+-   Cross-validation MAE: `3.28`
 -   Model vs. KDE: KDE performs better
--   Most predictive variable: abandoned_cars.nn
+-   Most predictive variable: abandoned_buildings.nn
 
 **Spatial Patterns:**
 
@@ -998,7 +997,7 @@ Based on your analysis, complete this summary:
 
 -   Overdispersion: Yes
 -   Spatial autocorrelation in residuals: No, model error are randomly distributed.
--   Cells with zero counts: 23% of the data are 0
+-   Cells with zero counts: 31% of the data are 0
 
 # Conclusion and Next Steps
 
