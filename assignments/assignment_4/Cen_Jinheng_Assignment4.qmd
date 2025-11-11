@@ -737,6 +737,9 @@ Standard cross-validation randomly splits data. But with spatial data, this mean
 **Leave-One-Group-Out (LOGO) Cross-Validation** trains on all districts except one, then tests on the held-out district.
 
 ```{r spatial-cv}
+#| message: false
+#| warning: false
+
 # Get unique districts
 districts <- unique(fishnet_model$District)
 cv_results <- tibble()
