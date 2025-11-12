@@ -141,8 +141,6 @@ cat("  - Date range:", min(burglaries$date, na.rm = TRUE), "to",
 
 **Question 1.1:** How many burglaries are in the dataset? What time period does this cover? Why does the coordinate reference system matter for our spatial analysis?
 
-*Your answer here:*
-
 -   There are 152664 burglaries in my data set (19734 in 2017). I chose **Sanitation Code Complaints.**
 
 -   This data set covers period between 2000 and 2018.
@@ -211,8 +209,6 @@ p1 + p2 +
 
 **Question 1.2:** What spatial patterns do you observe? Are burglaries evenly distributed across Chicago? Where are the highest concentrations? What might explain these patterns?
 
-*Your answer here:*
-
 -   Burglaries are not evenly distributed. There are two clusters in the density map. Lincoln Square and South Side are the highest concentrations (told from Google map). Since I am not familiar with Chicago, I just assumed that these are suburban neighbors that have lower revenue that leads to poorly maintenance, according to "broken window theory", there are likely more burglaries.
 
 # Part 2: Create Fishnet Grid
@@ -248,8 +244,6 @@ cat("  - Cell area:", round(st_area(fishnet[1,])), "square meters\n")
 ```
 
 **Question 2.1:** Why do we use a regular grid instead of existing boundaries like neighborhoods or census tracts? What are the advantages and disadvantages of this approach?
-
-*Your answer here:*
 
 -   We need fishnet to covert data points into areas that can be calculated for our modeling
 -   Fishnet has a consistent size, so there are no boundary bias. It is a standard approach commonly used in policy analysis. Additionally, It is easy to create and aggregate point data. Howerver, it might split natural areas.
@@ -299,8 +293,6 @@ ggplot() +
 ```
 
 **Question 2.2:** What is the distribution of burglary counts across cells? Why do so many cells have zero burglaries? Is this distribution suitable for count regression? (Hint: look up overdispersion)
-
-*Your answer here:*
 
 -   Cells with high amount concentrated in nearby areas, reflecting the first law of geography.
 
@@ -370,8 +362,6 @@ ggplot() +
 ```
 
 **Question 3.1:** How does the KDE map compare to the count map? What does KDE capture well? What does it miss?
-
-*Your answer here:*
 
 -   It better reflects regional characteristics across multiple grids, and it smooths out outliers (like zero cells).
 
@@ -453,8 +443,6 @@ p1 + p2 +
 
 **Question 4.1:** Do you see a visual relationship between abandoned buildings and burglaries? What does this suggest?
 
-*Your answer here:*
-
 -   Spatial pattern is not perfectly matched in these two maps: Clusters are not matched between these two maps — There are four clusters of abandoned buildings, particularly concentrated in the south-central area, while residential burglaries are more widely dispersed across the southern and northern suburbs.
 
 -   These maps suggest that abandoned buildings and burglaries might be strongly correlated, which should be alarmed for our future model building.
@@ -487,8 +475,6 @@ summary(fishnet$abandoned_building.nn)
 ```
 
 **Question 4.2:** What does a low value of `abandoned_building.nn` mean? A high value? Why might this be informative?
-
-*Your answer here:*
 
 -   `abandoned_building.nn` showing mean distance to 3 nearest abandoned buildings. A low value reflects that abandoned buildings are close to each other, while a high value shows that they are far and more spread. This number can give us a simple sense of the distribution rule of our data.
 
@@ -587,8 +573,6 @@ if (nrow(hotspots) > 0) {
 
 **Question 4.3:** Why might distance to a cluster of abandoned cars be more informative than distance to a single abandoned car? What does Local Moran's I tell us?
 
-*Your answer here:*
-
 -   it helps us to capture spatial dependence at regional level. (we have calculate the spatial dependence at local and neighborhood levels). It omits the influence of outliers and captures spillover effects, which improves prediction accuracy.
 
 -   Local Moran's I is a local measure. It shows the difference of local location from mean.
@@ -672,8 +656,6 @@ summary(model_poisson)
 
 **Question 6.1:** Interpret the coefficients. Which variables are significant? What do the signs (positive/negative) tell you?
 
-*Your answer here:*
-
 -   Variables that are significant: abandoned_building, abandoned_building.nn, dist_to_hotspot
 
 -   The positive coefficient for `abandoned_building` indicates that areas with more abandoned buildings tend to experience higher burglary counts. 
@@ -723,8 +705,6 @@ cat("Negative Binomial AIC:", round(AIC(model_nb), 1), "\n")
 ```
 
 **Question 6.2:** Which model fits better (lower AIC)? What does this tell you about the data?
-
-*Your answer here:*
 
 -   Negative Binomial has lower AIC, which means a better performance in predicting crime.
 
@@ -805,8 +785,6 @@ cv_results %>%
 ```
 
 **Question 7.1:** Why is spatial CV more appropriate than random CV for this problem? Which districts were hardest to predict?
-
-*Your answer here:*
 
 -   problems for CV here include:
 
@@ -910,8 +888,6 @@ comparison %>%
 
 **Question 8.1:** Does the complex model outperform the simple KDE baseline? By how much? Is the added complexity worth it?
 
-*Your answer here:*
-
 -   Sadly, the complex model perform worse than the KDE baseline. RMSE for KDE is 2.95, while RMSE for the complex model is 3.28.
 
 -   The added model complexity does not yield better predictive accuracy. Next step might include trying another predictor, adding more predictor, or changing the spatial feature.
@@ -953,8 +929,6 @@ p1 + p2
 ```
 
 **Question 9.2:** Where does the model make the biggest errors? Are there spatial patterns in the errors? What might this reveal?
-
-*Your answer here:*
 
 -   Model errors perform randomly in their spatial distribution. There are a few cells recorded high value in absolute model errors, however, they are randomly dispersed.
 
