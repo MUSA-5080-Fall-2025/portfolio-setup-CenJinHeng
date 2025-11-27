@@ -42,7 +42,7 @@ website:
             text: "Assignment 2: Spatial Analysis and Visualization"
           - href: assignments/assignment_4/Cen_Jinheng_Assignment4.qmd
             text: "Assignment 4: Predictive Policing"
-          - href: assignments/assignment_5/Cen_Yang_Assignment5.qmd
+          - href: assignments/assignment_5/Cen_Yang_Assignment5.Rmd
             text: "Assignment 5: Shared Bike Prediction"
       - text: Midterm
         menu: 
