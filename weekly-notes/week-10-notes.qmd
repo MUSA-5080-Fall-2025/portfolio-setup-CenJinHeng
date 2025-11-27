@@ -1,0 +1,88 @@
+---
+title: "Week 10 Notes - Course Introduction"
+date: "2025-11-10"
+---
+
+# Key Takeaways: Logistic Regression & Binary Classification
+
+## 1. Why Binary Outcomes Need New Tools
+- Linear regression fails for yes/no outcomes (predictions can be <0 or >1).
+- Binary outcomes require modeling **probabilities**, not continuous values.
+- Logistic regression ensures predicted values stay in **[0,1]**.
+
+---
+
+## 2. Logistic Regression Basics
+- Predicts the probability that an event occurs:  
+  \[
+  p = \frac{1}{1 + e^{-(\beta_0 + \beta X)}}
+  \]
+- Works by modeling **log-odds**, creating a linear relationship with predictors.
+- Coefficients become **odds ratios** when exponentiated (easy interpretation).
+
+---
+
+## 3. Applying Logistic Regression
+- Fits classification tasks: recidivism, disease risk, loan default, spam detection.
+- Model predicts probabilities → we must choose a **threshold** to classify 0/1.
+- Threshold choice depends on relative costs of false positives vs. false negatives.
+
+---
+
+## 4. Evaluating Binary Predictions
+- **Confusion matrix** summarizes TP, FP, TN, FN.
+- Key metrics:
+  - **Sensitivity (Recall):** TP / (TP + FN)
+  - **Specificity:** TN / (TN + FP)
+  - **Precision:** TP / (TP + FP)
+- No single metric fits all policy contexts—depends on consequences.
+
+---
+
+## 5. Threshold Trade-offs
+- Lower threshold → higher sensitivity, more false positives.
+- Higher threshold → higher specificity, more false negatives.
+- Threshold selection is a policy decision, not a statistical one.
+
+---
+
+## 6. ROC Curves & AUC
+- ROC curve visualizes sensitivity vs. false positive rate across thresholds.
+- **AUC** measures overall discrimination ability:
+  - 0.5 = random guessing
+  - 0.7–0.8 = acceptable
+  - 0.8–0.9 = good
+  - 0.9+ = excellent
+- ROC does *not* select thresholds; it only summarizes performance.
+
+---
+
+## 7. Fairness & Equity Considerations
+- Models can have similar overall accuracy but unequal error rates across groups.
+- False positive rate disparities can produce **harmful, unequal impacts**.
+- Case example: COMPAS recidivism tool (higher false positive rate for Black defendants).
+- Thresholds may need group-level evaluation to avoid disparate impact.
+
+---
+
+## 8. Choosing a Threshold in Practice
+- Must consider:
+  - Policy goals  
+  - Costs of errors  
+  - Stakeholder impacts  
+  - Group-level fairness  
+- Best practice:
+  1. Evaluate multiple thresholds  
+  2. Compare metrics across groups  
+  3. Examine real-world consequences  
+  4. Document decisions transparently  
+
+---
+
+## 9. Core Ideas to Remember
+1. Logistic regression predicts **probabilities**, not classes.
+2. Classification requires choosing a **threshold**, and this is context-dependent.
+3. Evaluation must use multiple metrics, not accuracy alone.
+4. ROC/AUC help assess discrimination quality but do not dictate thresholds.
+5. Error rates can differ by group—even with similar accuracy—raising equity issues.
+6. Policy-sensitive applications (e.g., criminal justice) require extra caution.

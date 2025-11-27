@@ -1,0 +1,128 @@
+---
+title: "Week 9 Notes - Course Introduction"
+date: "2025-11-10"
+---
+
+# Key Takeaways: Space-Time Prediction (Bike Share Demand)
+
+## 1. Motivation and Problem Context
+- Real-world task: forecast bike share demand to support rebalancing.
+- Demand varies across **space (stations)** and **time (hours)**.
+- Operational need: predict which stations will be empty or full **ahead of time**.
+- Models must capture temporal patterns and spatial differences simultaneously.
+
+---
+
+## 2. Panel Data Framework
+- **Definition:** same units observed repeatedly over time.
+- Each row = station-hour combination.
+- Enables analysis of both:
+  - Station-specific baselines (spatial effects).
+  - Time-based dynamics (temporal effects).
+
+**Examples of temporal variation:**
+- Morning/evening commute peaks.
+- Weather and weekday effects.
+- Weekend and holiday differences.
+
+---
+
+## 3. Data Preparation
+### Binning Trips
+- Aggregate trips into consistent time intervals (e.g., hourly).
+- Purpose: identify temporal patterns and create comparable time steps.
+
+### Creating Features
+- Extract from timestamps:
+  - `hour`, `day of week`, `week`.
+- Label weekends and holidays.
+- Merge weather data (temperature, precipitation).
+
+---
+
+## 4. Temporal Lags
+- Past demand predicts future demand.
+- Common lag variables:
+  - `lag1Hour`, `lag3Hours`, `lag12Hours`, `lag1day`.
+- Capture persistence and daily cycles.
+- Must compute **within each station**.
+
+---
+
+## 5. Building a Complete Panel
+- Missing station-hour combinations break lag calculations.
+- Use `expand.grid()` to create all station-hour pairs.
+- Fill missing trip counts with zeros.
+- Join:
+  - Fixed attributes (station location, demographics).
+  - Time-varying features (weather, hour, weekday).
+
+---
+
+## 6. Temporal Validation
+- **Rule:** never train on the future to predict the past.
+- Split by time, not randomly.
+  - Train on early weeks → test on later weeks.
+- Mirrors operational forecasting: use past data to predict future behavior.
+- Prevents **temporal leakage**.
+
+---
+
+## 7. Model Development Progression
+1. **Baseline:** time + weather.
+2. **+ Temporal lags:** add past demand variables.
+3. **+ Spatial features:** add demographics.
+4. **+ Fixed effects:** control for station-level baselines.
+5. **+ Holidays:** capture disruptions in demand.
+
+**Performance metric:** MAE (Mean Absolute Error)  
+→ Interpretable as “average trips off by X.”
+
+---
+
+## 8. Typical Results
+| Model | Key Additions | Improvement |
+|--------|----------------|--------------|
+| 1. Baseline | Time + Weather | Base level |
+| 2. + Lags | Temporal persistence | Major gain |
+| 3. + Demographics | Neighborhood context | Moderate |
+| 4. + Fixed Effects | Station baselines | Large gain |
+| 5. + Holidays | Event adjustments | Small gain |
+
+---
+
+## 9. Space-Time Error Analysis
+- Examine residuals in both space and time.
+- Identify systematic under/over-prediction.
+  - Rush hours or weekends?
+  - Certain neighborhoods?
+- Map errors spatially to reveal missing features.
+- Check correlation between errors and demographics (equity concerns).
+
+---
+
+## 10. Policy Insights
+- High-volume stations: prediction accuracy most critical.
+- Temporal trends guide rebalancing schedules.
+- Persistent spatial errors may imply infrastructure or equity issues.
+- “Good enough” predictions depend on operational tolerance for error.
+
+---
+
+## 11. Broader Applications
+- Panel data + temporal lags apply to:
+  - Transit ridership
+  - Crime monitoring
+  - Housing dynamics
+  - Health and education outcomes
+  - Environmental monitoring
+
+---
+
+## 12. Core Concepts Recap
+1. Panel data tracks the same spatial units over time.
+2. Temporal lags encode short- and long-term persistence.
+3. Temporal validation ensures realistic performance testing.
+4. Station fixed effects handle unobserved spatial heterogeneity.
+5. Space-time error analysis diagnoses model bias.
+6. Equity assessment is essential for deployment decisions.

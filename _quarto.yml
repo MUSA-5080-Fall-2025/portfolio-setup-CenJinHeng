@@ -26,6 +26,10 @@ website:
             text: Week 7  
           - href: weekly-notes/week-09-notes.qmd
             text: Week 9 
+          - href: weekly-notes/week-10-notes.qmd
+            text: Week 10
+          - href: weekly-notes/week-11-notes.qmd
+            text: Week 11
       - text: Labs
         menu:
           - href: labs/lab_0.qmd
@@ -38,6 +42,8 @@ website:
             text: "Assignment 2: Spatial Analysis and Visualization"
           - href: assignments/assignment_4/Cen_Jinheng_Assignment4.qmd
             text: "Assignment 4: Predictive Policing"
+          - href: assignments/assignment_5/Cen_Yang_Assignment5.qmd
+            text: "Assignment 5: Shared Bike Prediction"
       - text: Midterm
         menu: 
           - href: midterm/appendix/Midterm_2025.qmd

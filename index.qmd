@@ -7,16 +7,20 @@ title: "MUSA 5080 Portfolio"
 This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).
 
 ## About This Course
+
 Advanced spatial analysis and data science for urban planning and public policy.
 
 ## Portfolio Structure
-- **Weekly Notes:** My learning reflections and key concepts
-- **Labs:** Completed assignments and analyses
-- **Final Project:** Capstone modeling challenge
+
+-   **Weekly Notes:** My learning reflections and key concepts
+-   **Labs:** Completed assignments and analyses
+-   **Final Project:** Capstone modeling challenge
 
 ## About Me
-Hi, everyone! My name is Jinheng, and I am second year student in city planning program, smart cities concentration. I have strong interest in urban data science. I took GIS class and introduction to smart cities class last year, and I would like to explore more in this class. 
+
+Hi, everyone! My name is Jinheng, and I am second year student in city planning program, smart cities concentration. I have strong interest in urban data science. I took GIS class and introduction to smart cities class last year, and I would like to explore more in this class.
 
 ## Contact
-- Email: jinhengc@upenn.edu
-- GitHub: @CenJinHeng
+
+-   Email: jinhengc\@upenn.edu
+-   GitHub: @CenJinHeng
