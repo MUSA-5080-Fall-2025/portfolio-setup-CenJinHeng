@@ -22,189 +22,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Part 1: Replicate with Different Quarter
-
-1.  **Download data** for Q2, Q3, or Q4 2024 from:
-    <https://www.rideindego.com/about/data/>
-
-2.  **Adapt this code** to work with your quarter:
-
-    -   Update date ranges for weather data
-    -   Check for any data structure changes
-    -   Create the same 5 models
-    -   Calculate MAE for each model
-
-3.  **Compare results** to Q1 2025:
-
-    -   How do MAE values compare? Why might they differ?
-    -   Are temporal patterns different (e.g., summer vs. winter)?
-    -   Which features are most important in your quarter?
-
-**Answer:**
-
-```         
-- All models of Q2 2024 have higher MAE value compared with Q1 2025. MAE values (Q2 2024 vs Q1 2025) from lowest to highest are: Model 2 Temporal Lags (0.71 vs 0.5), Model 1 Time + Weather (0.87 vs 0.6), Model 4 Station FE (0.95 vs 0.73), Model 5 Rush Hour Interaction (0.95 vs 0.73), Model 3 Demographics (0.97 vs 0.74)
-- MAE will be larger in summer because warmer weather leads to increased usage of shared bicycles. Higher usage introduces greater uncertainty, resulting in larger errors.
-- Similar to Q1 2025, temporal is the most important feature in our quarter.
-```
-
-## Part 2: Error Analysis
-
-Analyze your model's errors in detail:
-
-1.  **Spatial patterns:**
-
-    -   Create error maps
-    -   Identify neighborhoods with high errors
-    -   Hypothesize why (missing features? different demand patterns?)
-
-**Answer:**
-
-```         
-- Neighborhoods in city center have high errors
-- Because stations in the city center have higher average demand. Higher usage brings significant uncertainty. Usage patterns may be influenced by numerous factors beyond the variables selected in our model.
-```
-
-2.  **Temporal patterns:**
-
-    -   When are errors highest?
-    -   Do certain hours/days have systematic under/over-prediction?
-    -   Are there seasonal patterns?
-
-**Answer:**
-
-```         
-- PM Rush has the highest errors.
-- Weekday has relatively higher errors than weekend
-- Summer (warmer season) has higher errors
-```
-
-3.  **Demographic patterns:**
-
-    -   Relate errors to census characteristics
-    -   Are certain communities systematically harder to predict?
-    -   What are the equity implications?
-
-**Answer:**
-
-```         
-- Neighborhoods with higher income levels, higher percentage of public transit, and higher percentage of white people are harder to predict (higher MAE)
-- Although these neighborhoods are not traditionally considered disadvantaged communities, the model's inaccuracies can negatively impact the user experience.Some potential users of shared bicycles may be forced to drive due to insufficient bike availability, thereby increasing energy waste. Or deploying large numbers of bikes in car-oriented neighborhoods，which leads to inefficient operations.
-```
-
-## Part 3: Feature Engineering & model improvement
-
-Based on your error analysis, add 2-3 NEW features to improve the model:
-
-**Potential features to consider:**
-
-*Temporal features:*
-
--   Holiday indicators (Memorial Day, July 4th, Labor Day)
--   School calendar (Penn, Drexel, Temple in session?)
--   Special events (concerts, sports games, conventions)
--   Day of month (payday effects?)
-
-*Weather features:*
-
--   Feels-like temperature (wind chill/heat index)
--   "Perfect biking weather" indicator (60-75°F, no rain)
--   Precipitation forecast (not just current)
--   Weekend + nice weather interaction
-
-*Spatial features:*
-
--   Distance to Center City
--   Distance to nearest university
--   Distance to nearest park
--   Points of interest nearby (restaurants, offices, bars)
--   Station capacity
--   Bike lane connectivity
-
-*Trip history features:*
-
--   Rolling 7-day average demand ✅
--   Same hour last week ✅
--   Station "type" clustering (residential, commercial, tourist)
-
-**Implementation:**
-
--   Add your features to the best model
--   Compare MAE before and after
--   Explain *why* you chose these features
--   Did they improve predictions? Where?
-
-**Answer:**
-
-```         
-- We chose "Rolling 7-day average demand" and "Same hour last week" as our additional features
-- MAE remains the same but R square was improved from 0.34 to 0.36, maning more data are explained in our model.
-- We selected these features because model 2 performed best as adding temporal features, so we assume that the shared bike usage pattern are strongly related to temporal features.
-```
-
-**Try a poisson model for count data**
-
-```         
-- MAE improved slightly from 0.731 to 0.725
-```
-
-## Part 4: Critical Reflection
-
-Write 1-2 paragraphs addressing:
-
-1.  **Operational implications:**
-    -   Is your final MAE "good enough" for Indego to use?
-    -   When do prediction errors cause problems for rebalancing?
-    -   Would you recommend deploying this system? Under what
-        conditions?
-2.  **Equity considerations:**
-    -   Do prediction errors disproportionately affect certain
-        neighborhoods?
-    -   Could this system worsen existing disparities in bike access?
-    -   What safeguards would you recommend?
-3.  **Model limitations:**
-    -   What patterns is your model missing?
-    -   What assumptions might not hold in real deployment?
-    -   How would you improve this with more time/data?
-
-**Answer:**
-
-```         
-- We think this model still need to be improved before deploying. The model exhibits higher MAE during peak periods and high demand areas, which is the most tricky parts for rebalanceing. Therefore, the model still struggles to accurately predict these parts with the highest demand.Incorrect use of the model may result in some high-demand stations failing to rebalance in a timely manner, worsening users' experience.We should continuously compare model data with actual conditions to identify stations with low error rates for pilot implementation.
--  We observe that neighborhoods with higher incomes, lower public transit usage, and higher proportions of white residents exhibit greater MAE. Although these neighborhoods are not traditionally considered disadvantaged communities, the model's inaccuracies can negatively impact the user experience.Some potential users of shared bicycles may be forced to drive due to insufficient bike availability, thereby increasing energy waste. Or deploying large numbers of bikes in car-oriented neighborhoods，which leads to inefficient operations. Field research should be conducted to identify the reasons for discrepancies between predictions and actual conditions.
-- Error maps show higher MAE in Center City and some outlying high-demand stations, which suggests the model is not fully capturing local land-use patterns or station capacity/nearby station density. Linear effects and mostly may be too simple: true responses to weather, time, and lags are likely non-linear with thresholds and strong interactions. To improve the model performing, we could add more features (like holiday and event calendars, station capacity, distance to CBD) and using more complicated models (non-linear models, machine leraning models).
-```
-
-------------------------------------------------------------------------
-
-# Submission Requirements
-
-## What to Submit (per team)
-
-1.  **Rmd file** with all your code (commented!)
-
-2.  **HTML output** with results and visualizations
-
-3.  **Brief report** summarizing (with supporting data & visualization):
-
-    -   Your quarter and why you chose it
-    -   Model comparison results
-    -   Error analysis insights
-    -   New features you added and why
-    -   Critical reflection on deployment
-
-## Tips for Success
-
-1.  **Start early** - data download and processing takes time
-2.  **Work together** - pair programming is your friend
-3.  **Test incrementally** - don't wait until the end to run code
-4.  **Document everything** - explain your choices
-5.  **Be creative** - the best features come from understanding Philly!
-6.  **Think critically** - technical sophistication isn't enough
-
-------------------------------------------------------------------------
-
-------------------------------------------------------------------------
+---
 
 # Setup
 
@@ -295,9 +113,6 @@ census_api_key("ba33e51bc7f9bbf247d76be557bdef8d36278508")
 
 ## Load Indego Trip Data (Q2 2025)
 
-**Note for HW5:** You'll download a different quarter from:
-<https://www.rideindego.com/about/data/>
-
 ```{r load_indego}
 # Read Q1 2024 data
 indego <- read_csv("data/indego-trips-2024-q2.csv")
@@ -331,9 +146,6 @@ table(indego$bike_type)
 ```
 
 ## Create Time Bins
-
-We need to aggregate trips into hourly intervals for our panel data
-structure.
 
 ```{r create_time_bins}
 indego <- indego %>%
@@ -441,8 +253,6 @@ kable(top_stations,
 
 ## Load Philadelphia Census Data
 
-We'll get census tract data to add demographic context to our stations.
-
 ```{r load_census}
 # Get Philadelphia census tracts
 philly_census <- get_acs(
@@ -459,7 +269,8 @@ philly_census <- get_acs(
   county = "Philadelphia",
   year = 2022,
   geometry = TRUE,
-  output = "wide"
+  output = "wide",
+  progress = "FALSE"
 ) %>%
   rename(
     Total_Pop = B01003_001E,
@@ -505,7 +316,6 @@ ggplot() +
 
 ## Join Census Data to Stations
 
-We'll spatially join census characteristics to each bike station.
 
 ```{r join_census_to_stations}
 # Create sf object for stations
@@ -583,13 +393,6 @@ ggplot() +
 
 # Dealing with missing data
 
-We need to decide what to do with the non-residential bike share
-stations. For this example, we are going to remove them -- this is not
-necessarily the right way to do things always, but for the sake of
-simplicity, we are narrowing our scope to only stations in residential
-neighborhoods. We might opt to create a separate model for
-non-residential stations..
-
 ```{r}
 # Identify which stations to keep
 valid_stations <- stations_census %>%
@@ -610,8 +413,7 @@ indego_census <- indego %>%
 
 # Get Weather Data
 
-Weather significantly affects bike share demand! Let's get hourly
-weather for Philadelphia.
+Weather significantly affects bike share demand.
 
 ```{r get_weather}
 # Get weather from Philadelphia International Airport (KPHL)
@@ -644,7 +446,6 @@ summary(weather_complete %>% select(Temperature, Precipitation, Wind_Speed))
 
 ## Visualize Weather Patterns
 
-Who is ready for a Philly winter?!
 
 ```{r visualize_weather}
 ggplot(weather_complete, aes(x = interval60, y = Temperature)) +
@@ -885,8 +686,6 @@ cat("Testing date range:", min(test$date), "to", max(test$date), "\n")
 
 # Build Predictive Models
 
-We'll build 5 models with increasing complexity to see what improves
-predictions.
 
 ## Model 1: Baseline (Time + Weather)
 
@@ -931,7 +730,6 @@ starting 7 +0.276 morning rush building 8 +0.487 PEAK morning rush 9
 +0.350 post-rush ... 17 +0.568 PEAK evening rush (5 PM!) 18 +0.389
 evening declining ... 23 +0.034 late night minimal
 
-Isn't this fun!
 
 ## Model 2: Add Temporal Lags
 
@@ -1064,9 +862,24 @@ ggplot(mae_results, aes(x = reorder(Model, -MAE), y = MAE)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-**Question:** Which features gave us the biggest improvement?
+3.  **Compare results** to Q1 2025:
 
-Temporal Lages.
+    -   How do MAE values compare? Why might they differ?
+    -   Are temporal patterns different (e.g., summer vs. winter)?
+    -   Which features are most important in your quarter?
+
+**Answer:**
+
+-   All models of Q2 2024 have higher MAE value compared with Q1 2025.
+    MAE values (Q2 2024 vs Q1 2025) from lowest to highest are: Model 2
+    Temporal Lags (0.71 vs 0.5), Model 1 Time + Weather (0.87 vs 0.6),
+    Model 4 Station FE (0.95 vs 0.73), Model 5 Rush Hour Interaction
+    (0.95 vs 0.73), Model 3 Demographics (0.97 vs 0.74)
+-   MAE will be larger in summer because warmer weather leads to
+    increased usage of shared bicycles. Higher usage introduces greater
+    uncertainty, resulting in larger errors.
+-   Similar to Q1 2025, temporal is the most important feature in our
+    quarter.
 
 ------------------------------------------------------------------------
 
@@ -1074,7 +887,7 @@ Temporal Lages.
 
 ## Observed vs. Predicted
 
-Let's use our best model (Model 2) for error analysis.
+Use our best model (Model 2) for error analysis.
 
 ```{r obs_vs_pred}
 test <- test %>%
@@ -1113,7 +926,6 @@ Performing well: AM Rush, Evening, Struggling: Overnight, PM Rush
 
 ## Spatial Error Patterns
 
-Are prediction errors clustered in certain parts of Philadelphia?
 
 ```{r spatial_errors}
 # Calculate MAE by station
@@ -1278,15 +1090,18 @@ grid.arrange(
 p1
 ```
 
-**Question:** Do you see spatial clustering of errors? What
-neighborhoods have high errors?
+**Question:** Hypothesize why (missing features? different demand patterns?)
 
-The areas with significant errors are concentrated in the city center
-and more distant locations.
+**Answer:**
+
+-   Neighborhoods in city center have high errors
+-   Because stations in the city center have higher average demand.
+    Higher usage brings significant uncertainty. Usage patterns may be
+    influenced by numerous factors beyond the variables selected in our
+    model.
 
 ## Temporal Error Patterns
 
-When are we most wrong?
 
 ```{r temporal_errors}
 # MAE by time of day and day type
@@ -1312,9 +1127,20 @@ ggplot(temporal_errors, aes(x = time_of_day, y = MAE, fill = day_type)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+**Question:**
+
+-   When are errors highest?
+-   Do certain hours/days have systematic under/over-prediction?
+-   Are there seasonal patterns?
+
+**Answer:**
+
+-   PM Rush has the highest errors.
+-   Weekday has relatively higher errors than weekend
+-   Summer (warmer season) has higher errors
+
 ## Errors and Demographics
 
-Are prediction errors related to neighborhood characteristics?
 
 ```{r errors_demographics}
 # Join demographic data to station errors
@@ -1348,8 +1174,11 @@ p3 <- ggplot(station_errors_demo, aes(x = Percent_White, y = MAE)) +
 grid.arrange(p1, p2, p3, ncol = 2)
 ```
 
-**Critical Question:** Are prediction errors systematically higher in
-certain demographic groups? What are the equity implications?
+**Critical Question:** 
+-   Are certain communities systematically harder to predict?
+-   What are the equity implications?
+
+**Answer:**
 
 -   Neighborhoods with higher income levels, higher percentage of public
     transit, and higher percentage of white people are harder to predict
@@ -1362,7 +1191,9 @@ certain demographic groups? What are the equity implications?
     in car-oriented neighborhoods，which leads to inefficient
     operations.
 
-------------------------------------------------------------------------
+---
+
+# Adding more features
 
 ```{r}
 # Add rolling 7-day average and same-hour-last-week demand by station
@@ -1408,6 +1239,23 @@ mae_model2_enh <- mean(abs(test_enh$Trip_Count - test_enh$pred2_enh), na.rm = TR
 cat("MAE for Model 2 with new features:", round(mae_model2_enh, 3), "\n")
 ```
 
+**Question:**
+
+-   Explain *why* you chose these features
+-   Did they improve predictions? Where?
+
+**Answer:**
+
+-   We chose "Rolling 7-day average demand" and "Same hour last week" as
+    our additional features
+-   MAE remains the same but R square was improved from 0.34 to 0.36,
+    maning more data are explained in our model.
+-   We selected these features because model 2 performed best as adding
+    temporal features, so we assume that the shared bike usage pattern
+    are strongly related to temporal features.
+
+# Try poisson model
+
 ```{r poisson_model}
 # Fit a Poisson regression using the enhanced feature set
 poisson_model <- glm(
@@ -1427,3 +1275,40 @@ cat("MAE for Poisson model:", round(mae_poisson, 3), "\n")
 summary(poisson_model)
 
 ```
+
+**Answer:**
+
+-   MAE improved slightly from 0.731 to 0.725
+
+# Conclusion
+
+-   We think this model still need to be improved before deploying. The
+    model exhibits higher MAE during peak periods and high demand areas,
+    which is the most tricky parts for rebalanceing. Therefore, the
+    model still struggles to accurately predict these parts with the
+    highest demand.Incorrect use of the model may result in some
+    high-demand stations failing to rebalance in a timely manner,
+    worsening users' experience.We should continuously compare model
+    data with actual conditions to identify stations with low error
+    rates for pilot implementation.
+-   We observe that neighborhoods with higher incomes, lower public
+    transit usage, and higher proportions of white residents exhibit
+    greater MAE. Although these neighborhoods are not traditionally
+    considered disadvantaged communities, the model's inaccuracies can
+    negatively impact the user experience.Some potential users of shared
+    bicycles may be forced to drive due to insufficient bike
+    availability, thereby increasing energy waste. Or deploying large
+    numbers of bikes in car-oriented neighborhoods，which leads to
+    inefficient operations. Field research should be conducted to
+    identify the reasons for discrepancies between predictions and
+    actual conditions.
+-   Error maps show higher MAE in Center City and some outlying
+    high-demand stations, which suggests the model is not fully
+    capturing local land-use patterns or station capacity/nearby station
+    density. Linear effects and mostly may be too simple: true responses
+    to weather, time, and lags are likely non-linear with thresholds and
+    strong interactions. To improve the model performing, we could add
+    more features (like holiday and event calendars, station capacity,
+    distance to CBD) and using more complicated models (non-linear
+    models, machine leraning models).
+
