@@ -50,6 +50,12 @@ website:
             text: "Appendix: Philadelphia Housing Price Prediction"
           - href: midterm/slides/Midterm_slides_v3.qmd
             text: "Slide: Philadelphia Housing Price Prediction"
+      - text: Final Project
+        menu: 
+          - href: final/appendix/final_2025.qmd
+            text: "SEPTA Bus Ridership Prediction in Philadelphia"
+          - href: final/slides/final_slides_2025.qmd
+            text: "Identifying Transit Deserts to Help Improve Equity-Focused Investments"
             
 format:
   html:
